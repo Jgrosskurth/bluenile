@@ -1,0 +1,202 @@
+/* ============================================================
+   Blue Nile — nav-bar block
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700&display=swap');
+
+/* ── Block root ─────────────────────────────────────────── */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  font-family: 'Gantari', sans-serif;
+}
+
+/* ── Top utility bar ────────────────────────────────────── */
+.nav-bar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  padding: 0 32px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-top-promo {
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0c1636;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.nav-top-utils {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-top-utils a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  color: #0c1636;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.15s ease;
+}
+
+.nav-top-utils a:hover {
+  opacity: 0.65;
+  text-decoration: underline;
+}
+
+/* ── Main nav bar ───────────────────────────────────────── */
+.nav-bar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Logo */
+.nav-bar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.nav-bar-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* Center nav links */
+.nav-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar-links a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #0c1636;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+}
+
+.nav-bar-links a:hover {
+  border-bottom-color: #0c1636;
+  opacity: 0.8;
+}
+
+/* Right utils: icons + hamburger */
+.nav-bar-utils {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Icon buttons (search, wishlist, bag) */
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0c1636;
+  border-radius: 50%;
+  transition: background 0.15s ease, color 0.15s ease;
+  padding: 0;
+}
+
+.nav-icon-btn:hover {
+  background: #f5f5f7;
+}
+
+.nav-icon-btn svg {
+  display: block;
+}
+
+/* Hamburger — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #0c1636;
+  padding: 0;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.nav-hamburger:hover {
+  background: #f5f5f7;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nav-bar-links {
+    gap: 16px;
+  }
+
+  .nav-bar-links a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-bar-top {
+    display: none;
+  }
+
+  .nav-bar-main {
+    padding: 0 16px;
+  }
+
+  .nav-bar-links {
+    display: none;
+  }
+
+  .nav-icon-btn.nav-search,
+  .nav-icon-btn.nav-wishlist {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}

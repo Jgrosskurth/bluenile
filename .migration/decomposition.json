@@ -1,0 +1,239 @@
+{
+  "page": "https://www.bluenile.com/",
+  "target": "jgrosskurth/bluenile",
+  "blocks": [
+    {
+      "id": "nav-bar",
+      "type": "nav-bar",
+      "skill": "migrate-header",
+      "sourceElement": "nav/header",
+      "description": "Blue Nile navigation bar — white bg, BN logo, 8 nav items (Engagement Rings, Rings, Earrings, Bracelets, Necklaces, Diamonds, Gemstones, Gifts & Collections), search/wishlist/bag icons, top banner ('Mother's Day Sale Up To 30% Off*')",
+      "data": {
+        "logo": "https://ecommo--ion.bluenile.com/bn-main/logo.6b793.svg",
+        "topBanner": "Mother's Day Sale Up To 30% Off*",
+        "topLinks": [
+          {"text": "Store", "href": "/jewelry-stores"},
+          {"text": "Virtual Appointment", "href": "/virtual-appointment"}
+        ],
+        "navItems": [
+          {"text": "Engagement Rings", "href": "https://www.bluenile.com/engagement-rings/styles"},
+          {"text": "Rings", "href": "https://www.bluenile.com/jewelry/rings"},
+          {"text": "Earrings", "href": "https://www.bluenile.com/jewelry/earrings"},
+          {"text": "Bracelets", "href": "https://www.bluenile.com/jewelry/bracelets"},
+          {"text": "Necklaces", "href": "https://www.bluenile.com/jewelry/necklaces"},
+          {"text": "Diamonds", "href": "https://www.bluenile.com/diamonds"},
+          {"text": "Gemstones", "href": "https://www.bluenile.com/gemstones"},
+          {"text": "Gifts & Collections", "href": "https://www.bluenile.com/jewelry/gifts"}
+        ]
+      }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "skill": "migrate-block",
+      "description": "Full-bleed hero with image left/right split. Dark navy overlay on left with white text. H1: 'Handwritten & Handpicked For Mom'. Two CTA buttons: 'SHOP JEWELRY SALE' (outline white) and 'SHOP ENGAGEMENT' (outline white). Image: gold bracelet with seal on blue paper.",
+      "data": {
+        "heading": "Handwritten & Handpicked For Mom",
+        "eyebrow": "MOTHER'S DAY SALE UP TO 30% OFF*",
+        "image": "https://dam.bluenile.com/images/public/53509/GOLD-BRACELET-WITH-SEAL-ON-BLUE-PAPER.webp",
+        "imageAlt": "Gold bracelet with seal on blue paper",
+        "ctas": [
+          {"text": "SHOP JEWELRY SALE", "href": "https://www.bluenile.com/jewelry/todays-jewelry-deals", "variant": "outline-white"},
+          {"text": "SHOP ENGAGEMENT", "href": "https://www.bluenile.com/engagement-rings", "variant": "outline-white"}
+        ],
+        "layout": "text-left image-right",
+        "bgColor": "#0c1636"
+      }
+    },
+    {
+      "id": "category-carousel",
+      "type": "category-carousel",
+      "skill": "migrate-block",
+      "description": "Horizontal scrollable category carousel with 8 category tiles. Each tile has a circular/square image and label below. White background.",
+      "data": {
+        "heading": null,
+        "items": [
+          {"image": "https://dam.bluenile.com/images/public/41154/diamond_engagement_rings.webp", "label": "Engagement Rings", "href": "https://www.bluenile.com/engagement-rings/styles"},
+          {"image": "https://dam.bluenile.com/images/public/41162/collection_of_diamond_wedding_rings_and_bands.webp", "label": "Wedding Rings", "href": "https://www.bluenile.com/jewelry/rings/wedding-rings"},
+          {"image": "https://dam.bluenile.com/images/public/41170/loose_diamonds.webp", "label": "Diamonds", "href": "https://www.bluenile.com/diamonds"},
+          {"image": "https://dam.bluenile.com/images/public/41178/Model_wearing_diamond_jewelry_rings_and_necklaces.webp", "label": "Diamond Jewelry", "href": "https://www.bluenile.com/diamond-jewelry"},
+          {"image": "https://dam.bluenile.com/images/public/41186/2_pairs_of_bezel_set_diamond_earrings.webp", "label": "Earrings", "href": "https://www.bluenile.com/jewelry/earrings"},
+          {"image": "https://dam.bluenile.com/images/public/41194/A_diamond_pendant,_and_tennis_necklace_stacked.webp", "label": "Necklaces", "href": "https://www.bluenile.com/jewelry/necklaces"},
+          {"image": "https://dam.bluenile.com/images/public/41296/diamond_tennis_bracelet.webp", "label": "Bracelets", "href": "https://www.bluenile.com/jewelry/bracelets"},
+          {"image": "https://dam.bluenile.com/images/public/41304/a_diamond_ring,_pearl_earring_and_necklace,_a_bracelet_and_ring_layered_together.webp", "label": "All Jewelry", "href": "https://www.bluenile.com/jewelry"}
+        ]
+      }
+    },
+    {
+      "id": "promo-banner-1",
+      "type": "promo-banner",
+      "skill": "migrate-block",
+      "description": "Secondary banner. Right-side text panel on light/white background, left large product image. Eyebrow: 'FIRST COMMUNION OCCASIONS'. H2: 'FOR A MEANINGFUL MILESTONE'. CTA: 'SHOP THE COLLECTION'. Layout: image-left, text-right.",
+      "data": {
+        "eyebrow": "FIRST COMMUNION OCCASIONS",
+        "heading": "FOR A MEANINGFUL MILESTONE",
+        "image": "https://dam.bluenile.com/images/public/53715/ELEGANT-JEWELRY-DISPLAY.webp",
+        "imageAlt": "Elegant jewelry display",
+        "cta": {"text": "SHOP THE COLLECTION", "href": "https://www.bluenile.com/jewelry/gifts/spring-occasions"},
+        "layout": "image-left text-right"
+      }
+    },
+    {
+      "id": "promo-banner-2",
+      "type": "promo-banner",
+      "skill": "migrate-block",
+      "description": "Secondary banner with dark navy background on text side. Eyebrow: 'CREATIVE STUDIO'. H2: 'TAILOR-MADE BY YOU'. Body copy: 'Our Creative Studio allows you to design your engagement ring exactly the way you want it — with control over every detail. Use our unique tools to create something exceptional, online or in showrooms.' CTA: 'DESIGN YOUR RING'. Layout: text-left on dark bg, image-right.",
+      "data": {
+        "eyebrow": "CREATIVE STUDIO",
+        "heading": "TAILOR-MADE BY YOU",
+        "body": "Our Creative Studio allows you to design your engagement ring exactly the way you want it — with control over every detail. Use our unique tools to create something exceptional, online or in showrooms.",
+        "image": "https://dam.bluenile.com/images/public/41312/a_collection_of_diamond_rings_stacked_on_display_stand.webp",
+        "imageAlt": "Collection of diamond rings stacked on display stand",
+        "cta": {"text": "DESIGN YOUR RING", "href": "https://www.bluenile.com/engagement-rings/custom-engagement-rings/design-your-own"},
+        "layout": "text-left dark image-right"
+      }
+    },
+    {
+      "id": "diamond-shapes",
+      "type": "diamond-shapes",
+      "skill": "migrate-block",
+      "description": "Grid section showing diamond shapes. Left side: large hero image of diamond cuts. Right side: heading 'EXPLORE DIAMOND SHAPES' with CTA 'FIND YOUR DIAMOND' and a 3x3 grid of 9 individual diamond shape images with labels. Full-bleed light gray background.",
+      "data": {
+        "heading": "EXPLORE DIAMOND SHAPES",
+        "heroImage": "https://dam.bluenile.com/images/public/50205/diamond-cuts-collection.webp",
+        "heroImageAlt": "Collection of diamond cuts",
+        "cta": {"text": "FIND YOUR DIAMOND", "href": "https://www.bluenile.com/diamonds"},
+        "shapes": [
+          {"image": "https://dam.bluenile.com/images/public/41326/asscher_cut_diamond.webp", "label": "Asscher"},
+          {"image": "https://dam.bluenile.com/images/public/41334/round_cut_diamond.webp", "label": "Round"},
+          {"image": "https://dam.bluenile.com/images/public/41342/cushion_cut_diamond.webp", "label": "Cushion"},
+          {"image": "https://dam.bluenile.com/images/public/41350/emerald-cut_diamond.webp", "label": "Emerald"},
+          {"image": "https://dam.bluenile.com/images/public/41358/marquise_cut_diamond.webp", "label": "Marquise"},
+          {"image": "https://dam.bluenile.com/images/public/41366/oval_cut_diamond.webp", "label": "Oval"},
+          {"image": "https://dam.bluenile.com/images/public/41390/princess_cut_diamond.webp", "label": "Princess"},
+          {"image": "https://dam.bluenile.com/images/public/41382/pear_shaped_diamond.webp", "label": "Pear"},
+          {"image": "https://dam.bluenile.com/images/public/41398/radiant_cut_diamond.webp", "label": "Radiant"}
+        ]
+      }
+    },
+    {
+      "id": "collection-slider",
+      "type": "collection-slider",
+      "skill": "migrate-block",
+      "description": "Horizontal card slider showing 5 Blue Nile jewelry collections. Each card has a full-bleed image background with overlay text (collection name) and a CTA button 'SHOP NOW'. White background section. Navigation arrows on left/right.",
+      "data": {
+        "items": [
+          {"title": "PERSONALIZED GEMSTONES COLLECTION", "image": "https://dam.bluenile.com/images/public/46613/gold-gemstone-jewelry-collection.webp", "cta": {"text": "SHOP NOW", "href": "https://www.bluenile.com/jewelry/collections/personalized"}},
+          {"title": "THE HEARTS CAPSULE", "image": "https://dam.bluenile.com/images/public/53737/GOLD-NECKLACE-HEART-DIAMOND-PENDANT.webp", "cta": {"text": "SHOP NOW", "href": "https://www.bluenile.com/jewelry/collections/bezel"}},
+          {"title": "BY JAMES ALLEN", "image": "https://dam.bluenile.com/images/public/53621/GOLD-BAND-RING-PEAR-DIAMOND.webp", "cta": {"text": "SHOP NOW", "href": "https://www.bluenile.com/jewelry/by-james-allen"}},
+          {"title": "THE EXTRAORDINARY COLLECTION", "image": "https://dam.bluenile.com/images/public/53994/DIAMOND-EARRINGS-ON-FLOWER.webp", "cta": {"text": "SHOP NOW", "href": "https://www.bluenile.com/jewelry/extraordinary-collection"}},
+          {"title": "NEW: SAPPHIRE & DIAMONDS COLLECTION", "image": "https://dam.bluenile.com/images/public/46579/sapphire-diamond-rings-set.webp", "cta": {"text": "SHOP NOW", "href": "https://www.bluenile.com/jewelry/collections/blue-sapphire-diamond"}}
+        ]
+      }
+    },
+    {
+      "id": "split-two-up",
+      "type": "split-two-up",
+      "skill": "migrate-block",
+      "description": "Two equal-width panels side by side. Left: pearl/jewelry image with CTA 'GIFT GUIDE'. Right: necklace on fabric image with CTA 'DIAMOND ESSENTIALS'. Both on light/white background. Each panel is an image with a button overlay.",
+      "data": {
+        "panels": [
+          {"image": "https://dam.bluenile.com/images/public/53751/PEARL-DIAMOND-JEWELRY-COLLECTION.webp", "imageAlt": "Pearl and diamond jewelry collection", "cta": {"text": "GIFT GUIDE", "href": "https://www.bluenile.com/jewelry/gifts"}},
+          {"image": "https://dam.bluenile.com/images/public/54010/DIAMOND-NECKLACE-ON-BLUE-FABRIC.webp", "imageAlt": "Diamond necklace on blue fabric", "cta": {"text": "DIAMOND ESSENTIALS", "href": "https://www.bluenile.com/diamond-jewelry/diamond-essentials"}}
+        ]
+      }
+    },
+    {
+      "id": "promo-banner-3",
+      "type": "promo-banner",
+      "skill": "migrate-block",
+      "description": "Full-width secondary banner. Large storefront image. Text overlay: H2 'VISIT US IN STORE'. CTA: 'FIND A SHOWROOM'. Dark navy text on lighter background or white overlay on image.",
+      "data": {
+        "heading": "VISIT US IN STORE",
+        "image": "https://dam.bluenile.com/images/public/52688/BLUE-NILE-JEWELRY-STORE-ENTRANCE.webp",
+        "imageAlt": "Blue Nile jewelry store entrance",
+        "cta": {"text": "FIND A SHOWROOM", "href": "https://www.bluenile.com/jewelry-stores"},
+        "layout": "text-over-image center"
+      }
+    },
+    {
+      "id": "value-props",
+      "type": "value-props",
+      "skill": "migrate-block",
+      "description": "4-column feature section titled 'ONLY AT BLUE NILE'. Each column has an image, title, and 2-3 sentence description. White background. Heading style: Outfit/all-caps.",
+      "data": {
+        "heading": "ONLY AT BLUE NILE",
+        "items": [
+          {"image": "https://dam.bluenile.com/images/public/41460/artisan_crafting_a_Blue_Nile_diamond_ring_by_hand.webp", "imageAlt": "Artisan crafting a Blue Nile diamond ring", "title": "A TRUE ORIGINAL", "description": "Blue Nile is the original online jeweler. Since 1999, we've provided the best product quality and price with the transparency you deserve."},
+          {"image": "https://dam.bluenile.com/images/public/41468/Blue_Nile_showroom_representative_presenting_diamond_engagement_rings_to_customer.webp", "imageAlt": "Blue Nile showroom representative presenting diamond rings", "title": "DISTINCTIVE SERVICE", "description": "Don't know where to start? We provide expert guidance and knowledgeable advice at every touchpoint. Our specialists are here to help — online and in showrooms."},
+          {"image": "https://dam.bluenile.com/images/public/41476/Blue_Nile_diamond_jewelry_featured_with_GIA_certification_logo.webp", "imageAlt": "Blue Nile diamond jewelry with GIA certification", "title": "INDUSTRY LEADERS", "description": "We set a higher standard in fine jewelry with ethically sourced diamonds, responsible mining, and creating the purest metals. Our jewels meet the highest grading standards."},
+          {"image": "https://dam.bluenile.com/images/public/41484/mixed_styles_yellow_gold_diamond_rings_stacked.webp", "imageAlt": "Mixed styles yellow gold diamond rings stacked", "title": "INNOVATIVE ASSORTMENT", "description": "Choose from the world's most beautiful diamonds, hand selected by our experts and crafted into exceptional jewelry that will last a lifetime."}
+        ]
+      }
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "skill": "migrate-block",
+      "description": "Blue Nile footer. Three columns: 'Customer Care' (Live Chat, phone, email, Contact Us, FAQ, Returns), 'Why Blue Nile' (Return Policy, Conflict Free Diamonds, Price Match, etc.), 'About Blue Nile' (Quality & Value, Reviews, Blog, Locations, Careers, Affiliate). Email signup 'Join the Blue Nile List'. Social: Facebook, Instagram, Pinterest. Bottom: Blue Nile wordmark SVG + copyright + legal links.",
+      "data": {
+        "columns": [
+          {
+            "heading": "Customer Care",
+            "headingHref": "https://www.bluenile.com/about-blue-nile",
+            "links": [
+              {"text": "Live Chat", "href": "#chat"},
+              {"text": "+1-800-242-2728", "href": "tel:+1-800-242-2728"},
+              {"text": "Email Us", "href": "mailto:service@bluenile.com"},
+              {"text": "Contact Us", "href": "https://www.bluenile.com/contact-us"},
+              {"text": "FAQ", "href": "https://www.bluenile.com/contact-us/faq"},
+              {"text": "Returns", "href": "https://www.bluenile.com/services/free-returns"}
+            ]
+          },
+          {
+            "heading": "Why Blue Nile",
+            "headingHref": "https://www.bluenile.com/services",
+            "links": [
+              {"text": "Return Policy", "href": "https://www.bluenile.com/services/free-returns"},
+              {"text": "Conflict Free Diamonds", "href": "https://www.signetjewelers.com/sustainability/default.aspx"},
+              {"text": "Diamond Price Matching", "href": "https://www.bluenile.com/services/diamond-price-match"},
+              {"text": "Diamond Upgrade Program", "href": "https://www.bluenile.com/services/diamond-upgrade-program"},
+              {"text": "Free Lifetime Warranty", "href": "https://www.bluenile.com/services/warranty"},
+              {"text": "Free Secure Shipping", "href": "https://www.bluenile.com/services/shipping"},
+              {"text": "Blue Nile Packaging", "href": "https://www.bluenile.com/services/packaging"},
+              {"text": "Jewelry Insurance", "href": "https://www.bluenile.com/services/insurance"},
+              {"text": "Jewelry Protection Plans", "href": "https://www.bluenile.com/protection-plans"}
+            ]
+          },
+          {
+            "heading": "About Blue Nile",
+            "headingHref": "https://www.bluenile.com/blue-nile-experience",
+            "links": [
+              {"text": "Quality & Value", "href": "https://www.bluenile.com/blue-nile-experience"},
+              {"text": "Reviews", "href": "https://www.bluenile.com/reviews"},
+              {"text": "Diamond Sustainability", "href": "https://www.bluenile.com/policies/diamond-sustainability"},
+              {"text": "Blue Nile Blog", "href": "https://www.bluenile.com/blog"},
+              {"text": "Locations", "href": "https://www.bluenile.com/jewelry-stores"},
+              {"text": "Careers", "href": "https://signetjewelers.wd1.myworkdayjobs.com/BlueNile"},
+              {"text": "Affiliate Program", "href": "https://www.bluenile.com/affiliates"}
+            ]
+          }
+        ],
+        "emailSignup": {"label": "Join the Blue Nile - List", "tagline": "Get Exclusive Offers and News"},
+        "social": [
+          {"platform": "Facebook", "href": "https://www.facebook.com/bluenile"},
+          {"platform": "Instagram", "href": "https://instagram.com/bluenilediamond"},
+          {"platform": "Pinterest", "href": "https://www.pinterest.com/BlueNile"}
+        ],
+        "copyright": "© 2026 Blue Nile Inc.",
+        "legalLinks": [
+          {"text": "Terms & Conditions", "href": "https://www.bluenile.com/policies/terms-and-conditions"},
+          {"text": "Privacy Policy", "href": "https://www.bluenile.com/policies/privacy"},
+          {"text": "Site Map", "href": "https://www.bluenile.com/sitemap"},
+          {"text": "Accessibility", "href": "https://www.bluenile.com/policies/accessibility"},
+          {"text": "Cookies Policy", "href": "https://www.bluenile.com/policies/cookies-policy"}
+        ]
+      }
+    }
+  ]
+}

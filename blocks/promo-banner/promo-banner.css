@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Blue Nile — promo-banner block
+   Variants: image-left | text-left dark | text-over-image center
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared / reset
+   -------------------------------------------------------------------------- */
+
+.promo-banner {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Gantari', sans-serif;
+}
+
+.promo-banner .promo-image {
+  flex: 0 0 60%;
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.promo-banner .promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promo-banner .promo-content {
+  flex: 0 0 40%;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 40px;
+  box-sizing: border-box;
+}
+
+/* Eyebrow */
+.promo-banner .promo-content .eyebrow {
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  color: #0c1636;
+}
+
+/* Heading */
+.promo-banner .promo-content h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 20px;
+  color: #0c1636;
+}
+
+/* Body text */
+.promo-banner .promo-content .body-text {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #0c1636;
+  max-width: 320px;
+  margin: 0 0 24px;
+}
+
+/* CTA wrapper */
+.promo-banner .promo-content .cta-wrap {
+  margin: 0;
+}
+
+/* CTA button — base (navy fill) */
+.promo-banner .promo-content .cta-wrap a {
+  display: inline-block;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 0;
+  border: 2px solid #0c1636;
+  background-color: #0c1636;
+  color: #ffffff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.promo-banner .promo-content .cta-wrap a:hover {
+  background-color: #1a2a5e;
+  border-color: #1a2a5e;
+}
+
+/* --------------------------------------------------------------------------
+   Variant 1: image-left
+   image on the left (60%), text on the right (40%, white bg)
+   -------------------------------------------------------------------------- */
+
+.promo-banner.image-left {
+  flex-direction: row;
+  min-height: 400px;
+}
+
+.promo-banner.image-left .promo-image {
+  order: 1;
+}
+
+.promo-banner.image-left .promo-content {
+  order: 2;
+  background-color: #ffffff;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Variant 2: text-left dark
+   text on the left (40%, dark navy bg), image on the right (60%)
+   -------------------------------------------------------------------------- */
+
+.promo-banner.text-left {
+  flex-direction: row;
+  min-height: 400px;
+}
+
+.promo-banner.text-left .promo-content {
+  order: 1;
+}
+
+.promo-banner.text-left .promo-image {
+  order: 2;
+}
+
+/* Dark modifier overrides text/bg colours */
+.promo-banner.text-left.dark .promo-content {
+  background-color: #0c1636;
+  align-items: flex-start;
+}
+
+.promo-banner.text-left.dark .promo-content .eyebrow {
+  color: #ffffff;
+}
+
+.promo-banner.text-left.dark .promo-content h2 {
+  color: #ffffff;
+}
+
+.promo-banner.text-left.dark .promo-content .body-text {
+  color: #ffffff;
+}
+
+/* White-fill CTA for dark variant */
+.promo-banner.text-left.dark .promo-content .cta-wrap a {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #0c1636;
+}
+
+.promo-banner.text-left.dark .promo-content .cta-wrap a:hover {
+  background-color: #e8eaf0;
+  border-color: #e8eaf0;
+  color: #0c1636;
+}
+
+/* --------------------------------------------------------------------------
+   Variant 3: text-over-image center
+   Full-width image, text overlay centered
+   -------------------------------------------------------------------------- */
+
+.promo-banner.text-over-image {
+  position: relative;
+  min-height: 320px;
+  display: block; /* override flex so image fills naturally */
+}
+
+.promo-banner.text-over-image .promo-image {
+  position: absolute;
+  inset: 0;
+  flex: none;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-banner.text-over-image .promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional dark scrim for legibility */
+.promo-banner.text-over-image .promo-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.30);
+}
+
+.promo-banner.text-over-image .promo-content {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  min-height: 320px;
+  padding: 60px 24px;
+  box-sizing: border-box;
+}
+
+/* Center alignment for text-over-image */
+.promo-banner.text-over-image.center .promo-content {
+  align-items: center;
+  text-align: center;
+}
+
+.promo-banner.text-over-image .promo-content h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0 0 28px;
+}
+
+/* Outline CTA for overlay variant */
+.promo-banner.text-over-image .promo-content .cta-wrap a {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.promo-banner.text-over-image .promo-content .cta-wrap a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile — all variants stack: image top, text below
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* Shared stacking */
+  .promo-banner {
+    flex-direction: column !important;
+    min-height: unset;
+  }
+
+  .promo-banner .promo-image,
+  .promo-banner .promo-content {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .promo-banner .promo-image {
+    order: 0 !important; /* always on top */
+    height: 260px;
+  }
+
+  .promo-banner .promo-content {
+    order: 1 !important;
+    padding: 32px 24px;
+  }
+
+  .promo-banner .promo-content h2 {
+    font-size: 26px;
+  }
+
+  /* text-over-image stacks differently: image keeps aspect, text below */
+  .promo-banner.text-over-image {
+    display: flex;
+    position: static;
+  }
+
+  .promo-banner.text-over-image .promo-image {
+    position: static;
+    height: 220px;
+  }
+
+  .promo-banner.text-over-image .promo-image::after {
+    display: none;
+  }
+
+  .promo-banner.text-over-image .promo-content {
+    position: static;
+    min-height: unset;
+    padding: 32px 24px;
+    background-color: #0c1636;
+  }
+
+  .promo-banner.text-over-image .promo-content h2 {
+    font-size: 28px;
+    letter-spacing: 0.06em;
+  }
+}

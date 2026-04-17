@@ -1,0 +1,51 @@
+.split-two-up {
+  display: flex;
+  height: 400px;
+}
+
+.split-panel {
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.split-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.split-panel-cta {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  /* button styles */
+  background: white;
+  color: #0c1636;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  text-decoration: none;
+  border: none;
+}
+
+.split-panel-cta:hover {
+  background: #e8e8e8;
+}
+
+@media (max-width: 767px) {
+  .split-two-up {
+    flex-direction: column;
+    height: auto;
+  }
+  .split-panel {
+    flex: none;
+    height: 280px;
+  }
+}

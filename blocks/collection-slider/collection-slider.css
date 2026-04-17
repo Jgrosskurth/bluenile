@@ -1,0 +1,169 @@
+/* ============================================================
+   Blue Nile – Collection Slider Block
+   ============================================================ */
+
+.collection-slider-container {
+  overflow: hidden;
+  padding: 40px 24px;
+  background: #fff;
+  position: relative;
+}
+
+/* Track ---------------------------------------------------- */
+.collection-slider-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.collection-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card ----------------------------------------------------- */
+.collection-card {
+  flex: 0 0 260px;
+  height: 340px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border-radius: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay */
+.collection-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  padding: 32px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Title */
+.collection-card-title {
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Shop Now button */
+.collection-card-btn {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  background: transparent;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.collection-card:hover .collection-card-btn {
+  background: #fff;
+  color: #0a2342; /* Blue Nile navy */
+}
+
+/* Nav arrows ------------------------------------------------ */
+.collection-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.collection-slider-nav:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.collection-slider-nav svg {
+  width: 16px;
+  height: 16px;
+  stroke: #0a2342;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.collection-slider-nav.prev {
+  left: 4px;
+}
+
+.collection-slider-nav.next {
+  right: 4px;
+}
+
+.collection-slider-nav[disabled] {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Desktop -------------------------------------------------- */
+@media (min-width: 768px) {
+  .collection-slider-container {
+    padding: 40px 48px;
+  }
+
+  .collection-card {
+    flex: 0 0 300px;
+    height: 380px;
+  }
+
+  .collection-card-title {
+    font-size: 13px;
+  }
+
+  .collection-slider-nav.prev {
+    left: 6px;
+  }
+
+  .collection-slider-nav.next {
+    right: 6px;
+  }
+}
