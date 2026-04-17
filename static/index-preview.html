@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Nile — Handwritten &amp; Handpicked For Mom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://dam.bluenile.com" crossorigin>
+  <link rel="preconnect" href="https://ecommo--ion.bluenile.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <style>
+/* FONTS */
+/* Blue Nile Brand Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@font-face {
+  font-family: gantari-fallback;
+  size-adjust: 100%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: lora-fallback;
+  size-adjust: 97%;
+  src: local('Georgia');
+}
+
+/* BASE */
+/*
+ * Blue Nile - EDS Migration
+ * Based on aem-boilerplate
+ */
+
+/* === FONTS === */
+/* Gantari: body/UI; Lora: headings */
+
+/* === CSS VARIABLES === */
+:root {
+  /* Brand colors */
+  --bn-navy-900: #0a0f28;
+  --bn-navy-800: #0c1636;
+  --bn-navy-700: #151542;
+  --bn-navy-600: #2c2c55;
+  --bn-blue-light: #c8d4e8;
+  --bn-cream: #f5f0eb;
+  --bn-gold: #c5a46a;
+  --bn-white: #ffffff;
+  --bn-gray-100: #f7f7f7;
+  --bn-gray-200: #e8e8e8;
+  --bn-gray-500: #888888;
+  --bn-gray-700: #444444;
+
+  /* EDS semantic color tokens */
+  --background-color: var(--bn-white);
+  --light-color: var(--bn-gray-100);
+  --dark-color: var(--bn-navy-800);
+  --text-color: var(--bn-navy-800);
+  --link-color: var(--bn-navy-700);
+  --link-hover-color: var(--bn-navy-600);
+
+  /* Fonts */
+  --body-font-family: 'Gantari', gantari-fallback, sans-serif;
+  --heading-font-family: 'Lora', lora-fallback, Georgia, serif;
+  --ui-font-family: 'Gantari', gantari-fallback, sans-serif;
+
+  /* Body sizes */
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+
+  /* Heading sizes */
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 40px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 16px;
+
+  /* Nav height */
+  --nav-height: 116px;
+
+  /* Spacing */
+  --section-padding: 64px 24px;
+  --section-padding-mobile: 40px 16px;
+}
+
+/* === FALLBACK FONTS === */
+@font-face {
+  font-family: gantari-fallback;
+  size-adjust: 100%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: lora-fallback;
+  size-adjust: 97%;
+  src: local('Georgia');
+}
+
+/* === RESET === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.appear {
+  display: block;
+}
+
+header {
+  height: var(--nav-height);
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  scroll-margin: calc(var(--nav-height) + 1em);
+}
+
+h1 { font-size: var(--heading-font-size-xxl); }
+h2 { font-size: var(--heading-font-size-xl); }
+h3 { font-size: var(--heading-font-size-l); }
+h4 { font-size: var(--heading-font-size-m); }
+h5 { font-size: var(--heading-font-size-s); }
+h6 { font-size: var(--heading-font-size-xs); }
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+code, pre {
+  font-size: var(--body-font-size-s);
+}
+
+pre {
+  overflow: scroll;
+}
+
+main pre {
+  background-color: var(--light-color);
+  padding: 1em;
+  border-radius: 0.25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Links */
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Buttons */
+a.button:any-link, button {
+  font-family: var(--ui-font-family);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 12px 32px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--text-color);
+  margin: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 0;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus {
+  background-color: var(--bn-navy-600);
+  cursor: pointer;
+}
+
+a.button.secondary, button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color);
+}
+
+a.button.primary-white {
+  background-color: var(--bn-white);
+  color: var(--bn-navy-800);
+}
+
+a.button.primary-white:hover {
+  background-color: var(--bn-gray-200);
+}
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* Sections */
+main .section {
+  padding: var(--section-padding);
+}
+
+@media (max-width: 767px) {
+  main .section {
+    padding: var(--section-padding-mobile);
+  }
+}
+
+main .section > div {
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* === SECTION VARIANTS === */
+main .section.dark {
+  background-color: var(--bn-navy-800);
+  color: var(--bn-white);
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3 {
+  color: var(--bn-white);
+}
+
+main .section.dark a.button {
+  background-color: var(--bn-white);
+  color: var(--bn-navy-800);
+}
+
+main .section.dark a.button:hover {
+  background-color: var(--bn-gray-200);
+}
+
+main .section.full-bleed {
+  padding: 0;
+}
+
+main .section.full-bleed > div {
+  max-width: none;
+}
+
+/* Fragment */
+.fragment { display: contents; }
+
+/* NAV BAR */
+/* ============================================================
+   Blue Nile — nav-bar block
+   ============================================================ */
+
+
+/* ── Block root ─────────────────────────────────────────── */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  font-family: 'Gantari', sans-serif;
+}
+
+/* ── Top utility bar ────────────────────────────────────── */
+.nav-bar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  padding: 0 32px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-top-promo {
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0c1636;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.nav-top-utils {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-top-utils a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  color: #0c1636;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.15s ease;
+}
+
+.nav-top-utils a:hover {
+  opacity: 0.65;
+  text-decoration: underline;
+}
+
+/* ── Main nav bar ───────────────────────────────────────── */
+.nav-bar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Logo */
+.nav-bar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.nav-bar-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* Center nav links */
+.nav-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar-links a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #0c1636;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+}
+
+.nav-bar-links a:hover {
+  border-bottom-color: #0c1636;
+  opacity: 0.8;
+}
+
+/* Right utils: icons + hamburger */
+.nav-bar-utils {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Icon buttons (search, wishlist, bag) */
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0c1636;
+  border-radius: 50%;
+  transition: background 0.15s ease, color 0.15s ease;
+  padding: 0;
+}
+
+.nav-icon-btn:hover {
+  background: #f5f5f7;
+}
+
+.nav-icon-btn svg {
+  display: block;
+}
+
+/* Hamburger — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #0c1636;
+  padding: 0;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.nav-hamburger:hover {
+  background: #f5f5f7;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nav-bar-links {
+    gap: 16px;
+  }
+
+  .nav-bar-links a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-bar-top {
+    display: none;
+  }
+
+  .nav-bar-main {
+    padding: 0 16px;
+  }
+
+  .nav-bar-links {
+    display: none;
+  }
+
+  .nav-icon-btn.nav-search,
+  .nav-icon-btn.nav-wishlist {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
+/* HERO */
+/* hero.css — Blue Nile EDS Hero Block */
+
+.hero {
+  display: block;
+  width: 100%;
+  font-family: 'Gantari', sans-serif;
+}
+
+.hero-wrapper {
+  width: 100%;
+}
+
+.hero-wrapper > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 520px;
+}
+
+.hero-content {
+  background-color: #0c1636;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 56px;
+  box-sizing: border-box;
+}
+
+.hero-eyebrow {
+  font-family: 'Gantari', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  margin: 0 0 20px 0;
+}
+
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 48px;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 36px 0;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.hero-cta-group a {
+  display: inline-block;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid #ffffff;
+  padding: 12px 28px;
+  min-width: 48px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.hero-cta-group a:hover {
+  background: #ffffff;
+  color: #0c1636;
+}
+
+.hero-image {
+  overflow: hidden;
+  height: 100%;
+}
+
+.hero-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Mobile — stack vertically, image on top, text below */
+@media (max-width: 767px) {
+  .hero-wrapper > div {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .hero-content {
+    padding: 36px 24px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 70vw;
+  }
+}
+
+/* CATEGORY CAROUSEL */
+/* category-carousel block */
+
+.category-carousel {
+  background: #fff;
+  padding: 32px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Mobile: horizontal scroll row */
+.category-carousel .carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 16px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.category-carousel .carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Desktop: 8-column grid */
+@media (min-width: 768px) {
+  .category-carousel .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
+    gap: 16px;
+    overflow-x: visible;
+    padding: 0 24px;
+    scroll-snap-type: none;
+  }
+}
+
+/* Tile */
+.category-carousel .carousel-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  flex: 0 0 auto;
+  width: 160px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .category-carousel .carousel-tile {
+    width: 100%;
+  }
+}
+
+.category-carousel .carousel-tile:hover .tile-image,
+.category-carousel .carousel-tile:focus .tile-image {
+  transform: scale(1.04);
+}
+
+.category-carousel .carousel-tile:focus {
+  outline: 2px solid #0c1636;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Image wrapper — enforces 1:1 crop */
+.category-carousel .tile-image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+
+.category-carousel .tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* Label */
+.category-carousel .tile-label {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0c1636;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* PROMO BANNER */
+/* ==========================================================================
+   Blue Nile — promo-banner block
+   Variants: image-left | text-left dark | text-over-image center
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared / reset
+   -------------------------------------------------------------------------- */
+
+.promo-banner {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Gantari', sans-serif;
+}
+
+.promo-banner .promo-image {
+  flex: 0 0 60%;
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.promo-banner .promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promo-banner .promo-content {
+  flex: 0 0 40%;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 40px;
+  box-sizing: border-box;
+}
+
+/* Eyebrow */
+.promo-banner .promo-content .eyebrow {
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  color: #0c1636;
+}
+
+/* Heading */
+.promo-banner .promo-content h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 20px;
+  color: #0c1636;
+}
+
+/* Body text */
+.promo-banner .promo-content .body-text {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #0c1636;
+  max-width: 320px;
+  margin: 0 0 24px;
+}
+
+/* CTA wrapper */
+.promo-banner .promo-content .cta-wrap {
+  margin: 0;
+}
+
+/* CTA button — base (navy fill) */
+.promo-banner .promo-content .cta-wrap a {
+  display: inline-block;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 0;
+  border: 2px solid #0c1636;
+  background-color: #0c1636;
+  color: #ffffff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.promo-banner .promo-content .cta-wrap a:hover {
+  background-color: #1a2a5e;
+  border-color: #1a2a5e;
+}
+
+/* --------------------------------------------------------------------------
+   Variant 1: image-left
+   image on the left (60%), text on the right (40%, white bg)
+   -------------------------------------------------------------------------- */
+
+.promo-banner.image-left {
+  flex-direction: row;
+  min-height: 400px;
+}
+
+.promo-banner.image-left .promo-image {
+  order: 1;
+}
+
+.promo-banner.image-left .promo-content {
+  order: 2;
+  background-color: #ffffff;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Variant 2: text-left dark
+   text on the left (40%, dark navy bg), image on the right (60%)
+   -------------------------------------------------------------------------- */
+
+.promo-banner.text-left {
+  flex-direction: row;
+  min-height: 400px;
+}
+
+.promo-banner.text-left .promo-content {
+  order: 1;
+}
+
+.promo-banner.text-left .promo-image {
+  order: 2;
+}
+
+/* Dark modifier overrides text/bg colours */
+.promo-banner.text-left.dark .promo-content {
+  background-color: #0c1636;
+  align-items: flex-start;
+}
+
+.promo-banner.text-left.dark .promo-content .eyebrow {
+  color: #ffffff;
+}
+
+.promo-banner.text-left.dark .promo-content h2 {
+  color: #ffffff;
+}
+
+.promo-banner.text-left.dark .promo-content .body-text {
+  color: #ffffff;
+}
+
+/* White-fill CTA for dark variant */
+.promo-banner.text-left.dark .promo-content .cta-wrap a {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #0c1636;
+}
+
+.promo-banner.text-left.dark .promo-content .cta-wrap a:hover {
+  background-color: #e8eaf0;
+  border-color: #e8eaf0;
+  color: #0c1636;
+}
+
+/* --------------------------------------------------------------------------
+   Variant 3: text-over-image center
+   Full-width image, text overlay centered
+   -------------------------------------------------------------------------- */
+
+.promo-banner.text-over-image {
+  position: relative;
+  min-height: 320px;
+  display: block; /* override flex so image fills naturally */
+}
+
+.promo-banner.text-over-image .promo-image {
+  position: absolute;
+  inset: 0;
+  flex: none;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-banner.text-over-image .promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional dark scrim for legibility */
+.promo-banner.text-over-image .promo-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.30);
+}
+
+.promo-banner.text-over-image .promo-content {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  min-height: 320px;
+  padding: 60px 24px;
+  box-sizing: border-box;
+}
+
+/* Center alignment for text-over-image */
+.promo-banner.text-over-image.center .promo-content {
+  align-items: center;
+  text-align: center;
+}
+
+.promo-banner.text-over-image .promo-content h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0 0 28px;
+}
+
+/* Outline CTA for overlay variant */
+.promo-banner.text-over-image .promo-content .cta-wrap a {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.promo-banner.text-over-image .promo-content .cta-wrap a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile — all variants stack: image top, text below
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* Shared stacking */
+  .promo-banner {
+    flex-direction: column !important;
+    min-height: unset;
+  }
+
+  .promo-banner .promo-image,
+  .promo-banner .promo-content {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .promo-banner .promo-image {
+    order: 0 !important; /* always on top */
+    height: 260px;
+  }
+
+  .promo-banner .promo-content {
+    order: 1 !important;
+    padding: 32px 24px;
+  }
+
+  .promo-banner .promo-content h2 {
+    font-size: 26px;
+  }
+
+  /* text-over-image stacks differently: image keeps aspect, text below */
+  .promo-banner.text-over-image {
+    display: flex;
+    position: static;
+  }
+
+  .promo-banner.text-over-image .promo-image {
+    position: static;
+    height: 220px;
+  }
+
+  .promo-banner.text-over-image .promo-image::after {
+    display: none;
+  }
+
+  .promo-banner.text-over-image .promo-content {
+    position: static;
+    min-height: unset;
+    padding: 32px 24px;
+    background-color: #0c1636;
+  }
+
+  .promo-banner.text-over-image .promo-content h2 {
+    font-size: 28px;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* DIAMOND SHAPES */
+/* diamond-shapes block */
+
+.diamond-shapes {
+  display: flex;
+  min-height: 480px;
+}
+
+/* LEFT: hero image */
+.diamond-shapes-hero {
+  flex: 0 0 50%;
+  overflow: hidden;
+}
+
+.diamond-shapes-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT: grid panel */
+.diamond-shapes-grid-panel {
+  flex: 0 0 50%;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.diamond-shapes-title {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0c1636;
+  margin: 0;
+  text-align: center;
+}
+
+/* 3×3 grid */
+.diamond-shapes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Individual shape tile */
+.diamond-shape-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 0;
+  cursor: pointer;
+}
+
+.diamond-shape-tile:hover .diamond-shape-label {
+  text-decoration: underline;
+}
+
+.diamond-shape-tile img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+/* Shape label */
+.diamond-shape-label {
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0c1636;
+  text-align: center;
+  display: block;
+}
+
+/* CTA button */
+.diamond-shapes-cta {
+  display: inline-block;
+  background: #0c1636;
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 28px;
+  border: 2px solid #0c1636;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.diamond-shapes-cta:hover {
+  background: transparent;
+  color: #0c1636;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .diamond-shapes {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .diamond-shapes-hero {
+    flex: unset;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+  .diamond-shapes-grid-panel {
+    flex: unset;
+    width: 100%;
+    padding: 32px 24px;
+  }
+}
+
+/* COLLECTION SLIDER */
+/* ============================================================
+   Blue Nile – Collection Slider Block
+   ============================================================ */
+
+.collection-slider-container {
+  overflow: hidden;
+  padding: 40px 24px;
+  background: #fff;
+  position: relative;
+}
+
+/* Track ---------------------------------------------------- */
+.collection-slider-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.collection-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card ----------------------------------------------------- */
+.collection-card {
+  flex: 0 0 260px;
+  height: 340px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border-radius: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay */
+.collection-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  padding: 32px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Title */
+.collection-card-title {
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Shop Now button */
+.collection-card-btn {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  background: transparent;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.collection-card:hover .collection-card-btn {
+  background: #fff;
+  color: #0a2342; /* Blue Nile navy */
+}
+
+/* Nav arrows ------------------------------------------------ */
+.collection-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.collection-slider-nav:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.collection-slider-nav svg {
+  width: 16px;
+  height: 16px;
+  stroke: #0a2342;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.collection-slider-nav.prev {
+  left: 4px;
+}
+
+.collection-slider-nav.next {
+  right: 4px;
+}
+
+.collection-slider-nav[disabled] {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Desktop -------------------------------------------------- */
+@media (min-width: 768px) {
+  .collection-slider-container {
+    padding: 40px 48px;
+  }
+
+  .collection-card {
+    flex: 0 0 300px;
+    height: 380px;
+  }
+
+  .collection-card-title {
+    font-size: 13px;
+  }
+
+  .collection-slider-nav.prev {
+    left: 6px;
+  }
+
+  .collection-slider-nav.next {
+    right: 6px;
+  }
+}
+
+/* SPLIT TWO-UP */
+.split-two-up {
+  display: flex;
+  height: 400px;
+}
+
+.split-panel {
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.split-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.split-panel-cta {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  /* button styles */
+  background: white;
+  color: #0c1636;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  text-decoration: none;
+  border: none;
+}
+
+.split-panel-cta:hover {
+  background: #e8e8e8;
+}
+
+@media (max-width: 767px) {
+  .split-two-up {
+    flex-direction: column;
+    height: auto;
+  }
+  .split-panel {
+    flex: none;
+    height: 280px;
+  }
+}
+
+/* VALUE PROPS */
+/* Value Props Block — Blue Nile */
+
+.value-props {
+  background: #fff;
+  padding: 64px 24px;
+}
+
+.value-props-heading {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0c1636;
+  text-align: center;
+  margin: 0 0 0 0;
+  padding-top: 32px;
+}
+
+.value-props-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1280px;
+  margin: 32px auto 0;
+}
+
+.value-prop-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.value-prop-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+.value-prop-title {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0c1636;
+  margin: 12px 0 0;
+}
+
+.value-prop-description {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 1023px) {
+  .value-props-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .value-props-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+/* ============================================================
+   Blue Nile — footer block
+   ============================================================ */
+
+
+/* ── Block root ─────────────────────────────────────────── */
+.footer {
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+  font-family: 'Gantari', sans-serif;
+}
+
+/* ── Top section: 4-column grid ─────────────────────────── */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 64px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Column shared */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column heading (acts as link) */
+.footer-col-heading {
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0c1636;
+  text-decoration: none;
+  margin: 0 0 18px 0;
+  display: block;
+  transition: opacity 0.15s ease;
+}
+
+.footer-col-heading:hover {
+  opacity: 0.7;
+}
+
+/* Link lists */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: #0c1636;
+  text-decoration: underline;
+}
+
+/* ── Email signup column ─────────────────────────────────── */
+.footer-col-signup {
+  gap: 0;
+}
+
+.footer-signup-heading {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0c1636;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-signup-tagline {
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  color: #666;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* Email form */
+.footer-signup-form {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.footer-signup-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-family: 'Gantari', sans-serif;
+  font-size: 13px;
+  color: #0c1636;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.footer-signup-input::placeholder {
+  color: #aaa;
+}
+
+.footer-signup-input:focus {
+  box-shadow: inset 0 0 0 2px #0c1636;
+}
+
+.footer-signup-btn {
+  padding: 10px 18px;
+  background: #0c1636;
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.footer-signup-btn:hover {
+  background: #1a2a5a;
+}
+
+/* Fine print */
+.footer-signup-terms {
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.footer-signup-terms a {
+  color: #555;
+  text-decoration: underline;
+}
+
+.footer-signup-terms a:hover {
+  color: #0c1636;
+}
+
+/* Social links */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.footer-social-link {
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0c1636;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #0c1636;
+  padding-bottom: 1px;
+  transition: opacity 0.15s ease;
+}
+
+.footer-social-link:hover {
+  opacity: 0.6;
+}
+
+/* ── Bottom section: dark navy ──────────────────────────── */
+.footer-bottom {
+  background: #151542;
+  padding: 22px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.footer-bottom-left {
+  flex-shrink: 0;
+}
+
+.footer-bottom-left img {
+  height: 20px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.footer-copyright {
+  font-family: 'Gantari', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Legal links */
+.footer-legal-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-legal-links a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.footer-legal-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+    padding: 48px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+    padding: 40px 24px;
+  }
+
+  .footer-bottom {
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-legal-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 499px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    padding: 32px 20px;
+  }
+
+  .footer-col-signup {
+    order: -1;
+  }
+}
+
+/* GLOBAL RESET */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <header>
+    <div class="nav-bar block" data-block-name="nav-bar" data-block-status="loading"></div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO -->
+    <div class="hero block" data-block-name="hero" data-block-status="loading">
+      <div>
+        <div>
+          <p>MOTHER’S DAY SALE UP TO 30% OFF*</p>
+          <h1>Handwritten &amp; Handpicked For Mom</h1>
+          <p>
+            <a href="https://www.bluenile.com/jewelry/todays-jewelry-deals">SHOP JEWELRY SALE</a>
+            <a href="https://www.bluenile.com/engagement-rings">SHOP ENGAGEMENT</a>
+          </p>
+        </div>
+        <div>
+          <picture>
+            <img src="https://dam.bluenile.com/images/public/53509/GOLD-BRACELET-WITH-SEAL-ON-BLUE-PAPER.webp"
+                 alt="Gold bracelet with Blue Nile seal on blue paper" loading="eager" width="960" height="640">
+          </picture>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY CAROUSEL -->
+    <div class="category-carousel block" data-block-name="category-carousel" data-block-status="loading">
+      <div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41154/diamond_engagement_rings.webp" alt="Engagement Rings" loading="lazy"></picture></div><div><p>Engagement Rings</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41162/collection_of_diamond_wedding_rings_and_bands.webp" alt="Wedding Rings" loading="lazy"></picture></div><div><p>Wedding Rings</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41170/loose_diamonds.webp" alt="Diamonds" loading="lazy"></picture></div><div><p>Diamonds</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41178/Model_wearing_diamond_jewelry_rings_and_necklaces.webp" alt="Diamond Jewelry" loading="lazy"></picture></div><div><p>Diamond Jewelry</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41186/2_pairs_of_bezel_set_diamond_earrings.webp" alt="Earrings" loading="lazy"></picture></div><div><p>Earrings</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41194/A_diamond_pendant,_and_tennis_necklace_stacked.webp" alt="Necklaces" loading="lazy"></picture></div><div><p>Necklaces</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41296/diamond_tennis_bracelet.webp" alt="Bracelets" loading="lazy"></picture></div><div><p>Bracelets</p></div></div>
+        <div><div><picture><img src="https://dam.bluenile.com/images/public/41304/a_diamond_ring,_pearl_earring_and_necklace,_a_bracelet_and_ring_layered_together.webp" alt="All Jewelry" loading="lazy"></picture></div><div><p>All Jewelry</p></div></div>
+      </div>
+    </div>
+
+    <!-- PROMO BANNER 1: Milestone -->
+    <div class="promo-banner image-left block" data-block-name="promo-banner" data-block-status="loading">
+      <div>
+        <div>
+          <picture><img src="https://dam.bluenile.com/images/public/53715/ELEGANT-JEWELRY-DISPLAY.webp" alt="Elegant jewelry display" loading="lazy" width="900" height="600"></picture>
+        </div>
+      </div>
+      <div>
+        <div>
+          <p>FIRST COMMUNION OCCASIONS</p>
+          <h2>FOR A MEANINGFUL MILESTONE</h2>
+          <p><a href="https://www.bluenile.com/jewelry/gifts/religious">SHOP THE COLLECTION</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMO BANNER 2: Creative Studio (dark) -->
+    <div class="promo-banner text-left dark block" data-block-name="promo-banner" data-block-status="loading">
+      <div>
+        <div>
+          <p>CREATIVE STUDIO</p>
+          <h2>TAILOR-MADE BY YOU</h2>
+          <p>Design your own ring with a diamond you love. Choose your metal, setting, and stone to create a piece as unique as your story.</p>
+          <p><a href="https://www.bluenile.com/create-your-own-ring">START DESIGNING</a></p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <picture><img src="https://dam.bluenile.com/images/public/41312/a_collection_of_diamond_rings_stacked_on_display_stand.webp" alt="Diamond rings collection" loading="lazy" width="900" height="600"></picture>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIAMOND SHAPES -->
+    <div class="diamond-shapes block" data-block-name="diamond-shapes" data-block-status="loading"></div>
+
+    <!-- COLLECTION SLIDER -->
+    <div class="collection-slider block" data-block-name="collection-slider" data-block-status="loading"></div>
+
+    <!-- SPLIT TWO-UP: Gift Guide / Diamond Essentials -->
+    <div class="split-two-up block" data-block-name="split-two-up" data-block-status="loading"></div>
+
+    <!-- PROMO BANNER 3: Visit Us In Store -->
+    <div class="promo-banner text-over-image center block" data-block-name="promo-banner" data-block-status="loading">
+      <div>
+        <div>
+          <picture><img src="https://dam.bluenile.com/images/public/52688/BLUE-NILE-JEWELRY-STORE-ENTRANCE.webp" alt="Blue Nile jewelry store entrance" loading="lazy" width="1440" height="320"></picture>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h2>VISIT US IN STORE</h2>
+          <p><a href="https://www.bluenile.com/jewelry-stores">FIND A SHOWROOM</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUE PROPS: Only at Blue Nile -->
+    <div class="value-props block" data-block-name="value-props" data-block-status="loading"></div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer block" data-block-name="footer" data-block-status="loading"></div>
+  </footer>
+
+  <script>
+/**
+ * Blue Nile — nav-bar block
+ * Renders a 3-layer navigation: utility bar, main nav, icons.
+ */
+
+function decorate(block) {
+  block.innerHTML = `
+    <div class="nav-bar-top">
+      <span class="nav-top-promo">Mother's Day Sale Up To 30% Off*</span>
+      <div class="nav-top-utils">
+        <a href="https://www.bluenile.com/jewelry-stores">Store</a>
+        <a href="https://www.bluenile.com/virtual-appointment">Virtual Appointment</a>
+        <a href="tel:+18002422728">+1&#8209;800&#8209;242&#8209;2728</a>
+      </div>
+    </div>
+    <div class="nav-bar-main">
+      <a href="https://www.bluenile.com/" class="nav-bar-logo">
+        <img
+          src="https://ecommo--ion.bluenile.com/bn-main/logo.6b793.svg"
+          alt="Blue Nile"
+          loading="eager"
+          height="28"
+        >
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-bar-links">
+          <li><a href="https://www.bluenile.com/engagement-rings/styles">Engagement Rings</a></li>
+          <li><a href="https://www.bluenile.com/jewelry/rings">Rings</a></li>
+          <li><a href="https://www.bluenile.com/jewelry/earrings">Earrings</a></li>
+          <li><a href="https://www.bluenile.com/jewelry/bracelets">Bracelets</a></li>
+          <li><a href="https://www.bluenile.com/jewelry/necklaces">Necklaces</a></li>
+          <li><a href="https://www.bluenile.com/diamonds">Diamonds</a></li>
+          <li><a href="https://www.bluenile.com/gemstones">Gemstones</a></li>
+          <li><a href="https://www.bluenile.com/jewelry/gifts">Gifts &amp; Collections</a></li>
+        </ul>
+      </nav>
+      <div class="nav-bar-utils">
+        <button class="nav-icon-btn nav-search" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
+        <button class="nav-icon-btn nav-wishlist" aria-label="Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <button class="nav-icon-btn nav-bag" aria-label="Shopping bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </button>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      </div>
+    </div>
+  `;
+}
+
+
+
+// hero.js — EDS block decorator
+function decorate(block) {
+  // Structure the block
+  const wrapper = block.querySelector(':scope > div');
+  if (!wrapper) return;
+  const [leftCell, rightCell] = wrapper.querySelectorAll(':scope > div');
+  if (leftCell) {
+    leftCell.classList.add('hero-content');
+    // First <p> before h1 is eyebrow
+    const firstP = leftCell.querySelector('p:first-child');
+    if (firstP && !firstP.querySelector('a')) {
+      firstP.classList.add('hero-eyebrow');
+    }
+    // Wrap CTA links as button-style
+    const ctaP = leftCell.querySelector('p:has(a)');
+    if (ctaP) {
+      ctaP.classList.add('hero-cta-group');
+      ctaP.querySelectorAll('a').forEach(a => a.classList.add('hero-btn'));
+    }
+  }
+  if (rightCell) {
+    rightCell.classList.add('hero-image');
+    const img = rightCell.querySelector('img');
+    if (img) img.loading = 'eager';
+  }
+}
+
+
+/**
+ * AEM EDS — category-carousel block decorator
+ * Blue Nile
+ *
+ * Expected block table structure (one row per tile):
+ *   Col 0: image (picture/img element, optionally wrapped in a link)
+ *   Col 1: label text (paragraph)
+ *
+ * An href is resolved in priority order:
+ *   1. <a> wrapping the image in col 0
+ *   2. <a> anywhere in col 1
+ *   3. data-href attribute on the row div
+ *   4. Hardcoded label → URL mapping (fallback)
+ */
+
+const HREF_MAP = {
+  'engagement rings': 'https://www.bluenile.com/engagement-rings/styles',
+  'wedding rings':    'https://www.bluenile.com/jewelry/rings/wedding-rings',
+  'diamonds':         'https://www.bluenile.com/diamonds',
+  'diamond jewelry':  'https://www.bluenile.com/diamond-jewelry',
+  'earrings':         'https://www.bluenile.com/jewelry/earrings',
+  'necklaces':        'https://www.bluenile.com/jewelry/necklaces',
+  'bracelets':        'https://www.bluenile.com/jewelry/bracelets',
+  'all jewelry':      'https://www.bluenile.com/jewelry',
+};
+
+function resolveHref(row, label) {
+  // 1. Link wrapping the image
+  const imgLink = row.querySelector(':scope > div:first-child a[href]');
+  if (imgLink) return imgLink.href;
+
+  // 2. Link in the label cell
+  const labelLink = row.querySelector(':scope > div:last-child a[href]');
+  if (labelLink) return labelLink.href;
+
+  // 3. data-href on the row
+  if (row.dataset.href) return row.dataset.href;
+
+  // 4. Fallback mapping
+  return HREF_MAP[label.toLowerCase()] || '#';
+}
+
+function buildTile(row) {
+  const cells = row.querySelectorAll(':scope > div');
+  if (cells.length < 2) return null;
+
+  const [imageCell, labelCell] = cells;
+
+  // Extract img element (may be inside <picture>)
+  const img = imageCell.querySelector('img');
+  if (!img) return null;
+
+  // Extract label text
+  const label = labelCell.textContent.trim();
+
+  // Resolve href
+  const href = resolveHref(row, label);
+
+  // Build tile
+  const tile = document.createElement('a');
+  tile.className = 'carousel-tile';
+  tile.href = href;
+  tile.setAttribute('aria-label', label);
+
+  // Image wrapper (1:1 crop)
+  const wrap = document.createElement('div');
+  wrap.className = 'tile-image-wrap';
+
+  const tileImg = document.createElement('img');
+  tileImg.className = 'tile-image';
+  tileImg.src = img.src;
+  tileImg.alt = img.alt || label;
+  tileImg.loading = 'lazy';
+  tileImg.width = img.width || 160;
+  tileImg.height = img.height || 160;
+
+  wrap.append(tileImg);
+
+  // Label
+  const span = document.createElement('span');
+  span.className = 'tile-label';
+  span.textContent = label;
+
+  tile.append(wrap, span);
+  return tile;
+}
+
+function decorate(block) {
+  // Each direct child div is one row/item
+  const rows = [...block.querySelectorAll(':scope > div > div, :scope > div')].filter((el) => {
+    // We want rows that are direct children of the wrapper div
+    return el.parentElement === block.querySelector(':scope > div') || el.parentElement === block;
+  });
+
+  // Normalise: some EDS structures nest one extra wrapper div
+  const wrapper = block.querySelector(':scope > div') || block;
+  const itemRows = [...wrapper.querySelectorAll(':scope > div')];
+
+  const track = document.createElement('div');
+  track.className = 'carousel-track';
+
+  itemRows.forEach((row) => {
+    const tile = buildTile(row);
+    if (tile) track.append(tile);
+  });
+
+  // Replace block content
+  block.innerHTML = '';
+  block.append(track);
+}
+
+
+
+/**
+ * Blue Nile — promo-banner block decorator
+ *
+ * Handles three layout variants driven by classes the author places on the
+ * block in the document table:
+ *
+ *   image-left            → 60 % image | 40 % text (white bg)
+ *   text-left dark        → 40 % text (navy bg) | 60 % image
+ *   text-over-image center → full-width image with centered text overlay
+ *
+ * Expected table row order (author-defined, flexible):
+ *   Row containing <picture>/<img>  → becomes .promo-image
+ *   Row(s) containing text          → eyebrow / heading / body / CTA link
+ *
+ * After decoration the block contains exactly two children:
+ *   .promo-content  — eyebrow, h2, body-text, cta-wrap
+ *   .promo-image    — picture > img
+ */
+
+/**
+ * Promote inline elements that look like an eyebrow label.
+ * Returns true when the paragraph was converted.
+ */
+function tryEyebrow(el) {
+  const text = el.textContent.trim();
+  // Eyebrow heuristic: ALL-CAPS, short (≤ 60 chars), no child block elements
+  if (
+    text === text.toUpperCase() &&
+    text.length <= 60 &&
+    !el.querySelector('a') &&
+    !el.querySelector('strong em') // not styled as heading
+  ) {
+    el.classList.add('eyebrow');
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Convert every plain <a> inside .cta-wrap into a button by adding the
+ * class. (CSS handles all visual styling — no inline styles injected.)
+ */
+function applyCtaClass(wrap) {
+  wrap.querySelectorAll('a').forEach((a) => {
+    a.classList.add('button');
+  });
+}
+
+/**
+ * Given a list of EDS row <div> elements, pull out the image row and the
+ * remaining text rows, then build a structured .promo-content + .promo-image
+ * layout inside the block.
+ *
+ * @param {HTMLElement} block
+ */
+function decorate(block) {
+  // ── 1. Collect rows ──────────────────────────────────────────────────────
+  const rows = [...block.querySelectorAll(':scope > div')];
+
+  let imageEl = null; // the <picture> or <img> node
+  const textNodes = []; // flat list of content nodes (p, h1-h6, etc.)
+
+  rows.forEach((row) => {
+    // Each EDS row has one or more cell <div>s
+    const cells = [...row.querySelectorAll(':scope > div')];
+
+    cells.forEach((cell) => {
+      const pic = cell.querySelector('picture');
+      const img = cell.querySelector('img');
+
+      if ((pic || img) && !imageEl) {
+        // This cell is the image cell — grab the outermost media element
+        imageEl = pic || img;
+      } else {
+        // Treat every child node of the cell as content
+        [...cell.childNodes].forEach((node) => {
+          // Skip empty text nodes
+          if (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()) return;
+          textNodes.push(node.cloneNode(true));
+        });
+      }
+    });
+  });
+
+  // ── 2. Build .promo-image ────────────────────────────────────────────────
+  const promoImage = document.createElement('div');
+  promoImage.classList.add('promo-image');
+
+  if (imageEl) {
+    // Ensure lazy loading on the img inside
+    const img = imageEl.tagName === 'IMG' ? imageEl : imageEl.querySelector('img');
+    if (img && !img.getAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+    promoImage.appendChild(imageEl);
+  }
+
+  // ── 3. Build .promo-content ──────────────────────────────────────────────
+  const promoContent = document.createElement('div');
+  promoContent.classList.add('promo-content');
+
+  textNodes.forEach((node) => {
+    // Promote Element nodes; pass text nodes through as-is
+    if (node.nodeType !== Node.ELEMENT_NODE) {
+      promoContent.appendChild(node);
+      return;
+    }
+
+    const tag = node.tagName.toLowerCase();
+
+    // ── Headings pass through unchanged ──
+    if (/^h[1-6]$/.test(tag)) {
+      // Normalise all headings to h2 for consistent styling
+      if (tag !== 'h2') {
+        const h2 = document.createElement('h2');
+        h2.innerHTML = node.innerHTML;
+        promoContent.appendChild(h2);
+      } else {
+        promoContent.appendChild(node);
+      }
+      return;
+    }
+
+    // ── Paragraphs ──
+    if (tag === 'p') {
+      const anchor = node.querySelector('a');
+
+      if (anchor) {
+        // CTA: wrap in .cta-wrap
+        const wrap = document.createElement('p');
+        wrap.classList.add('cta-wrap');
+        wrap.appendChild(node.querySelector('a').cloneNode(true));
+        applyCtaClass(wrap);
+        promoContent.appendChild(wrap);
+        return;
+      }
+
+      // Eyebrow detection (before falling through to body-text)
+      if (tryEyebrow(node)) {
+        promoContent.appendChild(node);
+        return;
+      }
+
+      // Regular body paragraph
+      node.classList.add('body-text');
+      promoContent.appendChild(node);
+      return;
+    }
+
+    // ── Anything else passes through ──
+    promoContent.appendChild(node);
+  });
+
+  // ── 4. Determine column order from variant classes ───────────────────────
+  //
+  // Variants and their DOM order:
+  //   image-left        → promoImage first, promoContent second
+  //   text-left         → promoContent first, promoImage second
+  //   text-over-image   → promoImage first (abs positioned), promoContent second
+  //
+  // CSS handles the visual order via flexbox `order` properties, so we simply
+  // append in document order (image first for image-left / text-over-image,
+  // content first for text-left).
+
+  const isTextLeft = block.classList.contains('text-left');
+
+  block.innerHTML = '';
+
+  if (isTextLeft) {
+    block.append(promoContent, promoImage);
+  } else {
+    block.append(promoImage, promoContent);
+  }
+}
+
+
+
+function decorate(block) {
+  const shapes = [
+    { label: 'Asscher',  img: 'https://dam.bluenile.com/images/public/41326/asscher_cut_diamond.webp' },
+    { label: 'Round',    img: 'https://dam.bluenile.com/images/public/41334/round_cut_diamond.webp' },
+    { label: 'Cushion',  img: 'https://dam.bluenile.com/images/public/41342/cushion_cut_diamond.webp' },
+    { label: 'Emerald',  img: 'https://dam.bluenile.com/images/public/41350/emerald-cut_diamond.webp' },
+    { label: 'Marquise', img: 'https://dam.bluenile.com/images/public/41358/marquise_cut_diamond.webp' },
+    { label: 'Oval',     img: 'https://dam.bluenile.com/images/public/41366/oval_cut_diamond.webp' },
+    { label: 'Princess', img: 'https://dam.bluenile.com/images/public/41390/princess_cut_diamond.webp' },
+    { label: 'Pear',     img: 'https://dam.bluenile.com/images/public/41382/pear_shaped_diamond.webp' },
+    { label: 'Radiant',  img: 'https://dam.bluenile.com/images/public/41398/radiant_cut_diamond.webp' },
+  ];
+
+  block.innerHTML = `
+    <div class="diamond-shapes-hero">
+      <img
+        src="https://dam.bluenile.com/images/public/50205/diamond-cuts-collection.webp"
+        alt="Diamond cuts collection"
+        loading="lazy"
+      >
+    </div>
+    <div class="diamond-shapes-grid-panel">
+      <h3 class="diamond-shapes-title">EXPLORE DIAMOND SHAPES</h3>
+      <div class="diamond-shapes-grid">
+        ${shapes.map((s) => `
+          <a href="https://www.bluenile.com/diamonds" class="diamond-shape-tile">
+            <img
+              src="${s.img}"
+              alt="${s.label} cut diamond"
+              loading="lazy"
+            >
+            <span class="diamond-shape-label">${s.label}</span>
+          </a>
+        `).join('')}
+      </div>
+      <a href="https://www.bluenile.com/diamonds" class="diamond-shapes-cta">FIND YOUR DIAMOND</a>
+    </div>
+  `;
+}
+
+
+
+/**
+ * Blue Nile – Collection Slider Block
+ * AEM Edge Delivery Services
+ *
+ * Desktop: ~3.5 cards visible (overflow hints more)
+ * Mobile:  ~1.5 cards visible
+ * Scroll-snap, no scrollbar, optional nav arrows
+ */
+
+const COLLECTIONS = [
+  {
+    title: 'PERSONALIZED GEMSTONES COLLECTION',
+    img: 'https://dam.bluenile.com/images/public/46613/gold-gemstone-jewelry-collection.webp',
+    href: 'https://www.bluenile.com/jewelry/collections/personalized',
+  },
+  {
+    title: 'THE HEARTS CAPSULE',
+    img: 'https://dam.bluenile.com/images/public/53737/GOLD-NECKLACE-HEART-DIAMOND-PENDANT.webp',
+    href: 'https://www.bluenile.com/jewelry/collections/bezel',
+  },
+  {
+    title: 'BY JAMES ALLEN',
+    img: 'https://dam.bluenile.com/images/public/53621/GOLD-BAND-RING-PEAR-DIAMOND.webp',
+    href: 'https://www.bluenile.com/jewelry/by-james-allen',
+  },
+  {
+    title: 'THE EXTRAORDINARY COLLECTION',
+    img: 'https://dam.bluenile.com/images/public/53994/DIAMOND-EARRINGS-ON-FLOWER.webp',
+    href: 'https://www.bluenile.com/jewelry/extraordinary-collection',
+  },
+  {
+    title: 'NEW: SAPPHIRE & DIAMONDS COLLECTION',
+    img: 'https://dam.bluenile.com/images/public/46579/sapphire-diamond-rings-set.webp',
+    href: 'https://www.bluenile.com/jewelry/collections/blue-sapphire-diamond',
+  },
+];
+
+/** Build a single card element */
+function buildCard({ title, img, href }) {
+  const a = document.createElement('a');
+  a.href = href;
+  a.className = 'collection-card';
+  a.setAttribute('aria-label', title);
+
+  const image = document.createElement('img');
+  image.src = img;
+  image.alt = title;
+  image.loading = 'lazy';
+  image.decoding = 'async';
+
+  const overlay = document.createElement('div');
+  overlay.className = 'collection-card-overlay';
+
+  const titleEl = document.createElement('span');
+  titleEl.className = 'collection-card-title';
+  titleEl.textContent = title;
+
+  const btn = document.createElement('span');
+  btn.className = 'collection-card-btn';
+  btn.textContent = 'SHOP NOW';
+  btn.setAttribute('aria-hidden', 'true'); // parent <a> is the interactive element
+
+  overlay.append(titleEl, btn);
+  a.append(image, overlay);
+  return a;
+}
+
+/** Build a nav arrow button */
+function buildNavBtn(direction) {
+  const btn = document.createElement('button');
+  btn.className = `collection-slider-nav ${direction}`;
+  btn.setAttribute('aria-label', direction === 'prev' ? 'Previous collections' : 'Next collections');
+  btn.setAttribute('type', 'button');
+
+  const d = direction === 'prev'
+    ? 'M15 18l-6-6 6-6'   // left chevron
+    : 'M9 18l6-6-6-6';    // right chevron
+
+  btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="${direction === 'prev' ? '15 18 9 12 15 6' : '9 18 15 12 9 6'}"/></svg>`;
+  return btn;
+}
+
+/** Scroll the track by one card-width in the given direction */
+function scrollTrack(track, direction) {
+  const cardWidth = track.querySelector('.collection-card')?.offsetWidth ?? 280;
+  const gap = 16;
+  const step = cardWidth + gap;
+  track.scrollBy({ left: direction === 'next' ? step : -step, behavior: 'smooth' });
+}
+
+/** Update disabled state on arrows based on scroll position */
+function syncNavState(track, prevBtn, nextBtn) {
+  const { scrollLeft, scrollWidth, clientWidth } = track;
+  prevBtn.disabled = scrollLeft <= 0;
+  nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
+}
+
+function decorateCollectionSlider(block) {
+  // Wrap block contents in a container div
+  const container = document.createElement('div');
+  container.className = 'collection-slider-container';
+
+  // Build track
+  const track = document.createElement('div');
+  track.className = 'collection-slider-track';
+  track.setAttribute('role', 'list');
+
+  COLLECTIONS.forEach((item) => {
+    const card = buildCard(item);
+    card.setAttribute('role', 'listitem');
+    track.appendChild(card);
+  });
+
+  // Build nav arrows
+  const prevBtn = buildNavBtn('prev');
+  const nextBtn = buildNavBtn('next');
+
+  prevBtn.addEventListener('click', () => scrollTrack(track, 'prev'));
+  nextBtn.addEventListener('click', () => scrollTrack(track, 'next'));
+
+  // Keep arrows in sync with scroll position
+  track.addEventListener('scroll', () => syncNavState(track, prevBtn, nextBtn), { passive: true });
+
+  container.append(prevBtn, track, nextBtn);
+
+  // Clear any EDS-generated markup and replace with our component
+  block.textContent = '';
+  block.appendChild(container);
+
+  // Set initial arrow state after paint
+  requestAnimationFrame(() => syncNavState(track, prevBtn, nextBtn));
+}
+
+
+function decorate(block) {
+  const panels = [
+    {
+      img: 'https://dam.bluenile.com/images/public/53751/PEARL-DIAMOND-JEWELRY-COLLECTION.webp',
+      alt: 'Pearl and diamond jewelry collection',
+      cta: { text: 'GIFT GUIDE', href: 'https://www.bluenile.com/jewelry/gifts' }
+    },
+    {
+      img: 'https://dam.bluenile.com/images/public/54010/DIAMOND-NECKLACE-ON-BLUE-FABRIC.webp',
+      alt: 'Diamond necklace on blue fabric',
+      cta: { text: 'DIAMOND ESSENTIALS', href: 'https://www.bluenile.com/diamond-jewelry/diamond-essentials' }
+    }
+  ];
+
+  block.innerHTML = panels.map(p => `
+    <div class="split-panel">
+      <img src="${p.img}" alt="${p.alt}" loading="lazy">
+      <a href="${p.cta.href}" class="split-panel-cta">${p.cta.text}</a>
+    </div>
+  `).join('');
+}
+
+
+function decorate(block) {
+  const items = [
+    {
+      img: 'https://dam.bluenile.com/images/public/41460/artisan_crafting_a_Blue_Nile_diamond_ring_by_hand.webp',
+      alt: 'Artisan crafting a Blue Nile diamond ring',
+      title: 'A TRUE ORIGINAL',
+      desc: "Blue Nile is the original online jeweler. Since 1999, we've provided the best product quality and price with the transparency you deserve.",
+    },
+    {
+      img: 'https://dam.bluenile.com/images/public/41468/Blue_Nile_showroom_representative_presenting_diamond_engagement_rings_to_customer.webp',
+      alt: 'Blue Nile showroom representative presenting diamond rings',
+      title: 'DISTINCTIVE SERVICE',
+      desc: "Don't know where to start? We provide expert guidance and knowledgeable advice at every touchpoint. Our specialists are here to help — online and in showrooms.",
+    },
+    {
+      img: 'https://dam.bluenile.com/images/public/41476/Blue_Nile_diamond_jewelry_featured_with_GIA_certification_logo.webp',
+      alt: 'Blue Nile diamond jewelry with GIA certification',
+      title: 'INDUSTRY LEADERS',
+      desc: 'We set a higher standard in fine jewelry with ethically sourced diamonds, responsible mining, and creating the purest metals. Our jewels meet the highest grading standards.',
+    },
+    {
+      img: 'https://dam.bluenile.com/images/public/41484/mixed_styles_yellow_gold_diamond_rings_stacked.webp',
+      alt: 'Mixed styles yellow gold diamond rings stacked',
+      title: 'INNOVATIVE ASSORTMENT',
+      desc: "Choose from the world's most beautiful diamonds, hand selected by our experts and crafted into exceptional jewelry that will last a lifetime.",
+    },
+  ];
+
+  block.innerHTML = `
+    <h2 class="value-props-heading">ONLY AT BLUE NILE</h2>
+    <div class="value-props-grid">
+      ${items.map((item) => `
+        <div class="value-prop-card">
+          <img src="${item.img}" alt="${item.alt}" class="value-prop-image" loading="lazy">
+          <h3 class="value-prop-title">${item.title}</h3>
+          <p class="value-prop-description">${item.desc}</p>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+
+
+/**
+ * Blue Nile — footer block
+ * Renders a 4-column top section + dark navy bottom bar.
+ */
+
+function decorate(block) {
+  block.innerHTML = `
+    <div class="footer-top">
+
+      <!-- Col 1: Customer Care -->
+      <div class="footer-col">
+        <a href="https://www.bluenile.com/contact-us" class="footer-col-heading">Customer Care</a>
+        <ul class="footer-links">
+          <li><a href="#">Live Chat</a></li>
+          <li><a href="tel:+18002422728">+1&#8209;800&#8209;242&#8209;2728</a></li>
+          <li><a href="mailto:service@bluenile.com">Email Us</a></li>
+          <li><a href="https://www.bluenile.com/contact-us">Contact Us</a></li>
+          <li><a href="https://www.bluenile.com/contact-us/faq">FAQ</a></li>
+          <li><a href="https://www.bluenile.com/services/free-returns">Returns</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Why Blue Nile -->
+      <div class="footer-col">
+        <a href="https://www.bluenile.com/services" class="footer-col-heading">Why Blue Nile</a>
+        <ul class="footer-links">
+          <li><a href="https://www.bluenile.com/services/free-returns">Return Policy</a></li>
+          <li><a href="https://www.signetjewelers.com/sustainability/default.aspx">Conflict Free Diamonds</a></li>
+          <li><a href="https://www.bluenile.com/services/diamond-price-match">Diamond Price Matching</a></li>
+          <li><a href="https://www.bluenile.com/services/diamond-upgrade-program">Diamond Upgrade Program</a></li>
+          <li><a href="https://www.bluenile.com/services/warranty">Free Lifetime Warranty</a></li>
+          <li><a href="https://www.bluenile.com/services/shipping">Free Secure Shipping</a></li>
+          <li><a href="https://www.bluenile.com/services/packaging">Blue Nile Packaging</a></li>
+          <li><a href="https://www.bluenile.com/services/insurance">Jewelry Insurance</a></li>
+          <li><a href="https://www.bluenile.com/protection-plans">Jewelry Protection Plans</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: About Blue Nile -->
+      <div class="footer-col">
+        <a href="https://www.bluenile.com/blue-nile-experience" class="footer-col-heading">About Blue Nile</a>
+        <ul class="footer-links">
+          <li><a href="https://www.bluenile.com/blue-nile-experience">Quality &amp; Value</a></li>
+          <li><a href="https://www.bluenile.com/reviews">Reviews</a></li>
+          <li><a href="https://www.bluenile.com/policies/diamond-sustainability">Diamond Sustainability</a></li>
+          <li><a href="https://www.bluenile.com/blog">Blue Nile Blog</a></li>
+          <li><a href="https://www.bluenile.com/jewelry-stores">Locations</a></li>
+          <li><a href="https://signetjewelers.wd1.myworkdayjobs.com/BlueNile">Careers</a></li>
+          <li><a href="https://www.bluenile.com/affiliates">Affiliate Program</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Email signup + social -->
+      <div class="footer-col footer-col-signup">
+        <span class="footer-signup-heading">Join the Blue Nile List</span>
+        <span class="footer-signup-tagline">Get Exclusive Offers and News</span>
+        <form class="footer-signup-form" onsubmit="return false">
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="footer-signup-input"
+            aria-label="Email address"
+          >
+          <button type="submit" class="footer-signup-btn">JOIN</button>
+        </form>
+        <p class="footer-signup-terms">
+          I agree to receive promotional emails from Blue Nile. You can unsubscribe at any time.
+          By clicking join, you accept our
+          <a href="https://www.bluenile.com/policies/privacy">Privacy Policy</a>.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/bluenile" class="footer-social-link" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://instagram.com/bluenilediamond" class="footer-social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.pinterest.com/BlueNile" class="footer-social-link" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <img
+          src="https://ecommo--ion.bluenile.com/bn-main/logo.6b793.svg"
+          alt="Blue Nile"
+          loading="lazy"
+          height="20"
+        >
+      </div>
+      <span class="footer-copyright">&copy; 2026 Blue Nile Inc.</span>
+      <div class="footer-legal-links">
+        <a href="https://www.bluenile.com/policies/terms-and-conditions">Terms &amp; Conditions</a>
+        <a href="https://www.bluenile.com/policies/privacy">Privacy Policy</a>
+        <a href="https://www.bluenile.com/sitemap">Site Map</a>
+        <a href="https://www.bluenile.com/policies/accessibility">Accessibility</a>
+        <a href="https://www.bluenile.com/policies/cookies-policy">Cookies Policy</a>
+      </div>
+    </div>
+  `;
+}
+
+
+
+  // RUN ALL DECORATORS
+  (function() {
+    var navEl = document.querySelector('.nav-bar.block');
+    if (navEl) decorateNavBar(navEl);
+
+    var heroEl = document.querySelector('.hero.block');
+    if (heroEl) decorateHero(heroEl);
+
+    var carouselEl = document.querySelector('.category-carousel.block');
+    if (carouselEl) decorateCategoryCarousel(carouselEl);
+
+    var promoBanners = document.querySelectorAll('.promo-banner.block');
+    promoBanners.forEach(function(el) { decoratePromoBanner(el); });
+
+    var shapesEl = document.querySelector('.diamond-shapes.block');
+    if (shapesEl) decorateDiamondShapes(shapesEl);
+
+    var sliderEl = document.querySelector('.collection-slider.block');
+    if (sliderEl) decorateCollectionSlider(sliderEl);
+
+    var splitEl = document.querySelector('.split-two-up.block');
+    if (splitEl) decorateSplitTwoUp(splitEl);
+
+    var valueEl = document.querySelector('.value-props.block');
+    if (valueEl) decorateValueProps(valueEl);
+
+    var footerEl = document.querySelector('.footer.block');
+    if (footerEl) decorateFooter(footerEl);
+  })();
+
+  </script>
+
+</body>
+</html>

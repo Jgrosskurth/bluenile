@@ -1,73 +1,78 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Blue Nile - EDS Migration
+ * Based on aem-boilerplate
  */
 
+/* === FONTS === */
+/* Gantari: body/UI; Lora: headings */
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* === CSS VARIABLES === */
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* Brand colors */
+  --bn-navy-900: #0a0f28;
+  --bn-navy-800: #0c1636;
+  --bn-navy-700: #151542;
+  --bn-navy-600: #2c2c55;
+  --bn-blue-light: #c8d4e8;
+  --bn-cream: #f5f0eb;
+  --bn-gold: #c5a46a;
+  --bn-white: #ffffff;
+  --bn-gray-100: #f7f7f7;
+  --bn-gray-200: #e8e8e8;
+  --bn-gray-500: #888888;
+  --bn-gray-700: #444444;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* EDS semantic color tokens */
+  --background-color: var(--bn-white);
+  --light-color: var(--bn-gray-100);
+  --dark-color: var(--bn-navy-800);
+  --text-color: var(--bn-navy-800);
+  --link-color: var(--bn-navy-700);
+  --link-hover-color: var(--bn-navy-600);
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* Fonts */
+  --body-font-family: 'Gantari', gantari-fallback, sans-serif;
+  --heading-font-family: 'Lora', lora-fallback, Georgia, serif;
+  --ui-font-family: 'Gantari', gantari-fallback, sans-serif;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* Body sizes */
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
 
-  /* nav height */
-  --nav-height: 64px;
+  /* Heading sizes */
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 40px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 16px;
+
+  /* Nav height */
+  --nav-height: 116px;
+
+  /* Spacing */
+  --section-padding: 64px 24px;
+  --section-padding-mobile: 40px 16px;
 }
 
-/* fallback fonts */
+/* === FALLBACK FONTS === */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: gantari-fallback;
+  size-adjust: 100%;
   src: local('Arial');
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+  font-family: lora-fallback;
+  size-adjust: 97%;
+  src: local('Georgia');
 }
 
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
+/* === RESET === */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -78,6 +83,7 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.appear {
@@ -88,28 +94,13 @@ header {
   height: var(--nav-height);
 }
 
-header .header,
-footer .footer {
-  visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  scroll-margin: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  scroll-margin: calc(var(--nav-height) + 1em);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -119,45 +110,31 @@ h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
+p, dl, ol, ul, pre, blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
 }
 
-code,
-pre {
+code, pre {
   font-size: var(--body-font-size-s);
 }
 
 pre {
-  padding: 16px;
-  border-radius: 8px;
+  overflow: scroll;
+}
+
+main pre {
   background-color: var(--light-color);
+  padding: 1em;
+  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
+/* Links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
-  overflow-wrap: break-word;
 }
 
 a:hover {
@@ -165,117 +142,49 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
-p.button-wrapper {
-  margin: 12px 0;
-}
-
-a.button:any-link,
-button.button {
+/* Buttons */
+a.button:any-link, button {
+  font-family: var(--ui-font-family);
+  display: inline-block;
   box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
-  line-height: 1.25;
   text-decoration: none;
+  border: 2px solid transparent;
+  padding: 12px 32px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--text-color);
+  margin: 8px 0;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  border-radius: 0;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-a.button[aria-disabled="true"],
-button.button:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
+a.button:hover, a.button:focus, button:hover, button:focus {
+  background-color: var(--bn-navy-600);
+  cursor: pointer;
 }
 
-a.button.primary,
-button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-a.button.primary:hover,
-a.button.primary:focus-visible,
-button.button.primary:hover,
-button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-a.button.primary[aria-disabled="true"],
-a.button.primary[aria-disabled="true"]:hover,
-a.button.primary[aria-disabled="true"]:focus-visible,
-button.button.primary:disabled,
-button.button.primary:disabled:hover,
-button.button.primary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-a.button.secondary,
-button.button.secondary {
-  border-color: var(--text-color);
-  background-color: transparent;
+a.button.secondary, button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
   color: var(--text-color);
 }
 
-a.button.secondary:hover,
-a.button.secondary:focus-visible,
-button.button.secondary:hover,
-button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
+a.button.primary-white {
+  background-color: var(--bn-white);
+  color: var(--bn-navy-800);
 }
 
-a.button.secondary[aria-disabled="true"],
-a.button.secondary[aria-disabled="true"]:hover,
-a.button.secondary[aria-disabled="true"]:focus-visible,
-button.button.secondary:disabled,
-button.button.secondary:disabled:hover,
-button.button.secondary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-/* high-impact call-to-action */
-a.button.accent,
-button.button.accent {
-  border-color: var(--link-color);
-  background-color: var(--link-color);
-  color: var(--background-color);
-}
-
-a.button.accent:hover,
-a.button.accent:focus-visible,
-button.button.accent:hover,
-button.button.accent:focus-visible {
-  border-color: var(--link-hover-color);
-  background-color: var(--link-hover-color);
-}
-
-a.button.accent[aria-disabled="true"],
-a.button.accent[aria-disabled="true"]:hover,
-a.button.accent[aria-disabled="true"]:focus-visible,
-button.button.accent:disabled,
-button.button.accent:disabled:hover,
-button.button.accent:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+a.button.primary-white:hover {
+  background-color: var(--bn-gray-200);
 }
 
 main img {
@@ -295,31 +204,50 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main > .section {
-  margin: 40px 0;
+/* Sections */
+main .section {
+  padding: var(--section-padding);
 }
 
-main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
+@media (max-width: 767px) {
+  main .section {
+    padding: var(--section-padding-mobile);
   }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+main .section > div {
+  max-width: 1280px;
+  margin: auto;
 }
+
+/* === SECTION VARIANTS === */
+main .section.dark {
+  background-color: var(--bn-navy-800);
+  color: var(--bn-white);
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3 {
+  color: var(--bn-white);
+}
+
+main .section.dark a.button {
+  background-color: var(--bn-white);
+  color: var(--bn-navy-800);
+}
+
+main .section.dark a.button:hover {
+  background-color: var(--bn-gray-200);
+}
+
+main .section.full-bleed {
+  padding: 0;
+}
+
+main .section.full-bleed > div {
+  max-width: none;
+}
+
+/* Fragment */
+.fragment { display: contents; }

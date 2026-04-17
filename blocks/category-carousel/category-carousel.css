@@ -1,0 +1,97 @@
+/* category-carousel block */
+
+.category-carousel {
+  background: #fff;
+  padding: 32px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Mobile: horizontal scroll row */
+.category-carousel .carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 16px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.category-carousel .carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Desktop: 8-column grid */
+@media (min-width: 768px) {
+  .category-carousel .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
+    gap: 16px;
+    overflow-x: visible;
+    padding: 0 24px;
+    scroll-snap-type: none;
+  }
+}
+
+/* Tile */
+.category-carousel .carousel-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  flex: 0 0 auto;
+  width: 160px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .category-carousel .carousel-tile {
+    width: 100%;
+  }
+}
+
+.category-carousel .carousel-tile:hover .tile-image,
+.category-carousel .carousel-tile:focus .tile-image {
+  transform: scale(1.04);
+}
+
+.category-carousel .carousel-tile:focus {
+  outline: 2px solid #0c1636;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Image wrapper — enforces 1:1 crop */
+.category-carousel .tile-image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+
+.category-carousel .tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* Label */
+.category-carousel .tile-label {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0c1636;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  line-height: 1.3;
+}
