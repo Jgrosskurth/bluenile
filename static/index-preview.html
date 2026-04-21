@@ -640,12 +640,12 @@ main .section.full-bleed > div {
   position: relative;
 }
 
-/* Track: 2 portrait tiles visible, snapping slider */
+/* Track: snapping slider, tiles 50% wide, overflow visible so active image bleeds */
 .category-carousel .carousel-track {
   display: flex;
   flex-direction: row;
   gap: 0;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -655,7 +655,7 @@ main .section.full-bleed > div {
   display: none;
 }
 
-/* Tile: each tile is 50% of viewport — 2 visible at once */
+/* Tile: 50% width, 2 visible at once */
 .category-carousel .carousel-tile {
   display: flex;
   flex-direction: column;
@@ -665,7 +665,7 @@ main .section.full-bleed > div {
   flex: 0 0 50%;
   scroll-snap-align: start;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible;
 }
 
 @media (max-width: 767px) {
@@ -674,16 +674,23 @@ main .section.full-bleed > div {
   }
 }
 
-.category-carousel .carousel-tile:hover .tile-image {
-  transform: scale(1.04);
-}
-
-/* Image wrapper — portrait 462:554 matching live site */
+/* Image wrapper — portrait 440:528 matching live site desktop aspect */
 .category-carousel .tile-image-wrap {
   width: 100%;
-  aspect-ratio: 462 / 554;
+  aspect-ratio: 440 / 528;
   overflow: hidden;
   background: #f5f5f5;
+  position: relative;
+}
+
+/* Active tile image is larger (111% = 625/561), creating the focus/bleed effect */
+.category-carousel .carousel-tile.is-active .tile-image-wrap {
+  overflow: visible;
+}
+
+.category-carousel .carousel-tile.is-active .tile-image {
+  width: 111%;
+  height: 111%;
 }
 
 .category-carousel .tile-image {
@@ -694,43 +701,43 @@ main .section.full-bleed > div {
   transition: transform 0.35s ease;
 }
 
-/* Label below image */
+/* Label below image — Outfit 14px, matching live */
 .category-carousel .tile-label {
   display: block;
-  padding: 12px 0 12px 0;
+  padding: 12px 0 16px 4px;
   font-family: 'Outfit', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #151542;
+  color: #0c1636;
   text-transform: none;
   letter-spacing: normal;
   line-height: 1.4;
 }
 
-/* Prev/Next arrow buttons */
+/* Prev/Next buttons — 36×36, white, 1px solid #e0e0e0, circle */
 .category-carousel .carousel-btn {
   position: absolute;
-  top: calc(462 / 554 * 25%);
+  top: calc(440 / 528 * 50% / 2);
   transform: translateY(-50%);
   background: #fff;
-  border: none;
+  border: 1px solid #e0e0e0;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 2;
+  padding: 0;
 }
 
 .category-carousel .carousel-btn:hover {
   background: #f5f5f5;
 }
 
-.category-carousel .carousel-btn.prev { left: 12px; }
-.category-carousel .carousel-btn.next { right: 12px; }
+.category-carousel .carousel-btn.prev { left: 10px; }
+.category-carousel .carousel-btn.next { right: 10px; }
 
 /* PROMO BANNER */
 /* ==========================================================================
@@ -2060,20 +2067,32 @@ function decorateCategoryCarousel(block) {
     if (tile) track.append(tile);
   });
 
-  // Prev/Next buttons
+  // Mark first tile as active
+  const tiles = track.querySelectorAll('.carousel-tile');
+  if (tiles[0]) tiles[0].classList.add('is-active');
+
+  // Update active tile on scroll
+  const updateActive = () => {
+    const tileW = tiles[0]?.offsetWidth || 1;
+    const idx = Math.round(track.scrollLeft / tileW);
+    tiles.forEach((t, i) => t.classList.toggle('is-active', i === idx));
+  };
+  track.addEventListener('scroll', updateActive, { passive: true });
+
+  // Prev/Next buttons — 36×36, white, 1px solid #e0e0e0, circle (matches live site)
   const prevBtn = document.createElement('button');
   prevBtn.className = 'carousel-btn prev';
   prevBtn.setAttribute('aria-label', 'Previous');
-  prevBtn.innerHTML = '<svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M9 1L1 8l8 7" stroke="#0c1636" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  prevBtn.innerHTML = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7l6 6" stroke="#0c1636" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   const nextBtn = document.createElement('button');
   nextBtn.className = 'carousel-btn next';
   nextBtn.setAttribute('aria-label', 'Next');
-  nextBtn.innerHTML = '<svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M1 1l8 7-8 7" stroke="#0c1636" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  nextBtn.innerHTML = '<svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#0c1636" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-  const tileWidth = () => track.querySelector('.carousel-tile')?.offsetWidth || 0;
-  prevBtn.addEventListener('click', () => track.scrollBy({ left: -tileWidth() * 2, behavior: 'smooth' }));
-  nextBtn.addEventListener('click', () => track.scrollBy({ left: tileWidth() * 2, behavior: 'smooth' }));
+  const tileWidth = () => tiles[0]?.offsetWidth || 0;
+  prevBtn.addEventListener('click', () => { track.scrollBy({ left: -tileWidth(), behavior: 'smooth' }); });
+  nextBtn.addEventListener('click', () => { track.scrollBy({ left: tileWidth(), behavior: 'smooth' }); });
 
   // Replace block content
   block.innerHTML = '';
