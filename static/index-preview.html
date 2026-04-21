@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://dam.bluenile.com" crossorigin>
   <link rel="preconnect" href="https://ecommo--ion.bluenile.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
 /* FONTS */
 /* Blue Nile Brand Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @font-face {
   font-family: gantari-fallback;
@@ -302,30 +302,33 @@ main .section.full-bleed > div {
   align-items: center;
   justify-content: space-between;
   height: 36px;
-  padding: 0 32px;
-  background: #fff;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 0 20px;
+  background: #111636;
+  border-bottom: none;
 }
 
 .nav-top-promo {
   font-family: 'Gantari', sans-serif;
   font-size: 12px;
-  font-weight: 500;
-  color: #0c1636;
+  font-weight: 600;
+  color: #ffffff;
   letter-spacing: 0.04em;
   white-space: nowrap;
+  flex: 1;
+  text-align: center;
 }
 
 .nav-top-utils {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-shrink: 0;
 }
 
 .nav-top-utils a {
   font-family: 'Gantari', sans-serif;
   font-size: 12px;
-  color: #0c1636;
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
   letter-spacing: 0.03em;
   transition: opacity 0.15s ease;
@@ -484,46 +487,53 @@ main .section.full-bleed > div {
 }
 
 /* HERO */
-/* hero.css — Blue Nile EDS Hero Block */
+/* hero.css — Blue Nile EDS Hero Block
+   Live layout: full-width image (1541×660) with text absolutely positioned
+   on the left half at top (top:191px). The dark navy feel comes from the
+   image itself (dark left side) — NOT a CSS background color.
+*/
 
 .hero {
   display: block;
   width: 100%;
   font-family: 'Gantari', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-wrapper {
+/* The outermost EDS wrapper div: position relative for text overlay */
+.hero > div {
+  position: relative;
   width: 100%;
 }
 
-.hero-wrapper > div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 520px;
-}
-
+/* Hide the first cell (text content) from normal flow — position it on top */
 .hero-content {
-  background-color: #0c1636;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 756px;
+  max-width: 55%;
+  padding: 64px 48px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 48px 56px;
+  background: transparent;
+  z-index: 2;
   box-sizing: border-box;
 }
 
 .hero-eyebrow {
   font-family: 'Gantari', sans-serif;
   font-weight: 400;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.12em;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: normal;
   text-transform: uppercase;
-  font-variant: small-caps;
   margin: 0 0 20px 0;
 }
 
 .hero h1 {
-  font-family: 'Lora', serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 400;
   font-size: 48px;
   color: #ffffff;
@@ -539,17 +549,18 @@ main .section.full-bleed > div {
   margin: 0;
 }
 
+/* Primary CTA: white fill + navy text */
 .hero-cta-group a {
   display: inline-block;
-  font-family: 'Gantari', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffffff;
-  background: transparent;
-  border: 2px solid #ffffff;
-  padding: 12px 28px;
+  color: #0c1636;
+  background: #ffffff;
+  border: none;
+  padding: 18px 32px;
   min-width: 48px;
   text-decoration: none;
   text-align: center;
@@ -559,125 +570,123 @@ main .section.full-bleed > div {
 }
 
 .hero-cta-group a:hover {
-  background: #ffffff;
-  color: #0c1636;
+  background: #e8ecf4;
 }
 
+/* Second CTA: outlined */
+.hero-cta-group a:nth-child(2) {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.hero-cta-group a:nth-child(2):hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Image cell: full-width, no height restriction */
 .hero-image {
-  overflow: hidden;
-  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 .hero-image picture {
   display: block;
   width: 100%;
-  height: 100%;
 }
 
 .hero-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
+  max-height: 660px;
+  object-fit: cover;
+  object-position: center top;
 }
 
-/* Mobile — stack vertically, image on top, text below */
+/* Mobile — stack vertically, image on top, text below (not overlaid) */
 @media (max-width: 767px) {
-  .hero-wrapper > div {
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
+  .hero > div {
+    position: static;
   }
 
   .hero-content {
-    padding: 36px 24px;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 24px;
+    background-color: #0c1636;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
   }
 
   .hero h1 {
     font-size: 32px;
   }
 
-  .hero-image {
-    width: 100%;
-    height: 70vw;
+  .hero-image img {
+    max-height: 280px;
+    object-position: right center;
   }
 }
 
 /* CATEGORY CAROUSEL */
-/* category-carousel block */
+/* Live site: 8 portrait tiles filling the full viewport width.
+   Each tile: portrait aspect (462×554 image + label area below).
+   Desktop: flex row, no gaps, each tile 1/8 width.
+   Mobile: horizontal scroll. */
 
 .category-carousel {
   background: #fff;
-  padding: 32px 0;
+  padding: 0;
   width: 100%;
   overflow: hidden;
 }
 
-/* Mobile: horizontal scroll row */
 .category-carousel .carousel-track {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 0 16px;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .category-carousel .carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
-/* Desktop: 8-column grid */
-@media (min-width: 768px) {
-  .category-carousel .carousel-track {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(100px, 1fr));
-    gap: 16px;
-    overflow-x: visible;
-    padding: 0 24px;
-    scroll-snap-type: none;
-  }
-}
-
-/* Tile */
+/* Tile: 1/8 of container width on desktop */
 .category-carousel .carousel-tile {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   text-decoration: none;
   color: inherit;
-  flex: 0 0 auto;
-  width: 160px;
+  flex: 0 0 calc(100% / 8);
   scroll-snap-align: start;
   cursor: pointer;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .category-carousel .carousel-tile {
-    width: 100%;
+    flex: 0 0 150px;
   }
 }
 
-.category-carousel .carousel-tile:hover .tile-image,
-.category-carousel .carousel-tile:focus .tile-image {
+.category-carousel .carousel-tile:hover .tile-image {
   transform: scale(1.04);
 }
 
-.category-carousel .carousel-tile:focus {
-  outline: 2px solid #0c1636;
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* Image wrapper — enforces 1:1 crop */
+/* Image wrapper — portrait aspect 462:554 ≈ 5:6 */
 .category-carousel .tile-image-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 462 / 554;
   overflow: hidden;
-  border-radius: 4px;
   background: #f5f5f5;
 }
 
@@ -686,21 +695,23 @@ main .section.full-bleed > div {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.25s ease;
+  transition: transform 0.35s ease;
 }
 
-/* Label */
+/* Label — below image, left padding matching live site (28px top, 16px bottom, 28px left) */
 .category-carousel .tile-label {
   display: block;
-  margin-top: 10px;
+  padding: 28px 8px 16px 28px;
   font-family: 'Gantari', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #0c1636;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(26, 26, 26);
+  text-transform: none;
+  letter-spacing: normal;
   line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* PROMO BANNER */
@@ -746,9 +757,9 @@ main .section.full-bleed > div {
 /* Eyebrow */
 .promo-banner .promo-content .eyebrow {
   font-family: 'Gantari', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0 0 14px;
   color: #0c1636;
@@ -756,12 +767,12 @@ main .section.full-bleed > div {
 
 /* Heading */
 .promo-banner .promo-content h2 {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 32px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.3;
   margin: 0 0 20px;
-  color: #0c1636;
+  color: rgb(21, 21, 66);
 }
 
 /* Body text */
@@ -779,26 +790,25 @@ main .section.full-bleed > div {
   margin: 0;
 }
 
-/* CTA button — base (navy fill) */
+/* CTA button — base (navy fill, no border) */
 .promo-banner .promo-content .cta-wrap a {
   display: inline-block;
-  font-family: 'Gantari', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 13px 28px;
+  padding: 13px 32px;
   border-radius: 0;
-  border: 2px solid #0c1636;
-  background-color: #0c1636;
+  border: none;
+  background-color: rgb(12, 22, 54);
   color: #ffffff;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .promo-banner .promo-content .cta-wrap a:hover {
   background-color: #1a2a5e;
-  border-color: #1a2a5e;
 }
 
 /* --------------------------------------------------------------------------
@@ -808,15 +818,20 @@ main .section.full-bleed > div {
 
 .promo-banner.image-left {
   flex-direction: row;
-  min-height: 400px;
+  min-height: 600px;
+  height: 771px;
 }
 
 .promo-banner.image-left .promo-image {
   order: 1;
+  flex: 0 0 55%;
+  max-width: 55%;
 }
 
 .promo-banner.image-left .promo-content {
   order: 2;
+  flex: 0 0 45%;
+  max-width: 45%;
   background-color: #ffffff;
   align-items: flex-start;
 }
@@ -828,7 +843,7 @@ main .section.full-bleed > div {
 
 .promo-banner.text-left {
   flex-direction: row;
-  min-height: 400px;
+  min-height: 600px;
 }
 
 .promo-banner.text-left .promo-content {
@@ -922,10 +937,10 @@ main .section.full-bleed > div {
 }
 
 .promo-banner.text-over-image .promo-content h2 {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 36px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   color: #ffffff;
   margin: 0 0 28px;
 }
@@ -1022,10 +1037,10 @@ main .section.full-bleed > div {
   display: block;
 }
 
-/* RIGHT: grid panel */
+/* RIGHT: grid panel — live site has transparent bg */
 .diamond-shapes-grid-panel {
   flex: 0 0 50%;
-  background: #f5f5f5;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1038,11 +1053,11 @@ main .section.full-bleed > div {
 /* Heading */
 .diamond-shapes-title {
   font-family: 'Gantari', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0c1636;
+  color: rgb(26, 26, 26);
   margin: 0;
   text-align: center;
 }
@@ -1069,11 +1084,11 @@ main .section.full-bleed > div {
 }
 
 .diamond-shape-tile img {
-  width: 64px;
-  height: 64px;
+  width: 94px;
+  height: 94px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 6px;
+  margin: 0 auto 8px;
 }
 
 /* Shape label */
@@ -1088,26 +1103,26 @@ main .section.full-bleed > div {
   display: block;
 }
 
-/* CTA button */
+/* CTA button — outline navy */
 .diamond-shapes-cta {
   display: inline-block;
-  background: #0c1636;
-  color: #fff;
-  font-family: 'Gantari', sans-serif;
-  font-size: 12px;
+  background: transparent;
+  color: #0c1636;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 12px 28px;
-  border: 2px solid #0c1636;
+  padding: 13px 32px;
+  border: 1px solid #0c1636;
   transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
 
 .diamond-shapes-cta:hover {
-  background: transparent;
-  color: #0c1636;
+  background: #0c1636;
+  color: #fff;
 }
 
 /* Mobile: stack vertically */
@@ -1200,10 +1215,10 @@ main .section.full-bleed > div {
 /* Title */
 .collection-card-title {
   color: #fff;
-  font-family: 'Gantari', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.4;
 }
@@ -1302,9 +1317,10 @@ main .section.full-bleed > div {
 }
 
 /* SPLIT TWO-UP */
+/* Live site: two 50/50 panels, each with an image and a white CTA at bottom center */
 .split-two-up {
   display: flex;
-  height: 400px;
+  height: 405px;
 }
 
 .split-panel {
@@ -1326,15 +1342,15 @@ main .section.full-bleed > div {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  /* button styles */
+  /* white fill button */
   background: white;
   color: #0c1636;
-  font-family: 'Gantari', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 12px 32px;
+  padding: 13px 32px;
   text-decoration: none;
   border: none;
 }
@@ -1433,7 +1449,7 @@ main .section.full-bleed > div {
 
 /* ── Block root ─────────────────────────────────────────── */
 .footer {
-  background: #fff;
+  background: rgb(247, 247, 247);
   border-top: 1px solid #e8e8e8;
   font-family: 'Gantari', sans-serif;
 }
@@ -1443,10 +1459,11 @@ main .section.full-bleed > div {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-  padding: 64px 48px;
+  padding: 48px 48px;
   max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
+  background: rgb(247, 247, 247);
 }
 
 /* Column shared */
@@ -1455,16 +1472,16 @@ main .section.full-bleed > div {
   flex-direction: column;
 }
 
-/* Column heading (acts as link) */
+/* Column heading (acts as link) — 14px 600 weight navy, no uppercase */
 .footer-col-heading {
   font-family: 'Gantari', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #0c1636;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  color: rgb(21, 21, 66);
   text-decoration: none;
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
   display: block;
   transition: opacity 0.15s ease;
 }
@@ -1480,7 +1497,7 @@ main .section.full-bleed > div {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .footer-links li {
@@ -1490,16 +1507,16 @@ main .section.full-bleed > div {
 
 .footer-links a {
   font-family: 'Gantari', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  color: #555;
+  color: rgb(21, 21, 66);
   text-decoration: none;
-  line-height: 1.4;
+  line-height: 20px;
   transition: color 0.15s ease;
 }
 
 .footer-links a:hover {
-  color: #0c1636;
+  color: #000;
   text-decoration: underline;
 }
 
