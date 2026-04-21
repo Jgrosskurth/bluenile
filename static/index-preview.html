@@ -775,6 +775,7 @@ main .section.full-bleed > div {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
   display: block;
 }
 
@@ -968,6 +969,73 @@ main .section.full-bleed > div {
 .promo-banner.text-over-image.center .promo-content {
   align-items: center;
   text-align: center;
+}
+
+/* Right-side text overlay (Milestone banner) — matches live site layout:
+   full-width image, content pinned to right 45%, no scrim, dark text */
+.promo-banner.text-over-image.text-right {
+  position: relative;
+  display: block;
+}
+
+.promo-banner.text-over-image.text-right .promo-image::after {
+  display: none; /* no dark scrim */
+}
+
+.promo-banner.text-over-image.text-right .promo-content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 45%;
+  min-height: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 40px;
+  background: transparent;
+}
+
+.promo-banner.text-over-image.text-right .promo-content .eyebrow {
+  color: #0c1636;
+}
+
+.promo-banner.text-over-image.text-right .promo-content h2 {
+  color: #0c1636;
+  font-size: 24px;
+}
+
+.promo-banner.text-over-image.text-right .promo-content .cta-wrap a {
+  background-color: #0c1636;
+  border-color: #0c1636;
+  color: #ffffff;
+}
+
+.promo-banner.text-over-image.text-right .promo-content .cta-wrap a:hover {
+  background-color: #1a2a5e;
+}
+
+/* text-right: image is full-width static (not absolute), content overlays on top */
+.promo-banner.text-over-image.text-right .promo-image {
+  position: static;
+  inset: auto;
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1150 / 575;
+}
+
+.promo-banner.text-over-image.text-right .promo-image picture {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-banner.text-over-image.text-right .promo-image img {
+  object-position: center center;
 }
 
 .promo-banner.text-over-image .promo-content h2 {
@@ -1811,8 +1879,8 @@ body { margin: 0; padding: 0; }
       </div>
     </div>
 
-    <!-- PROMO BANNER 1: Milestone (image left) -->
-    <div class="promo-banner image-left block" data-block-name="promo-banner">
+    <!-- PROMO BANNER 1: Milestone (full-screen, text right) -->
+    <div class="promo-banner text-over-image text-right block" data-block-name="promo-banner">
       <div>
         <div><picture><img src="https://dam.bluenile.com/images/public/53715/ELEGANT-JEWELRY-DISPLAY.webp" alt="Elegant jewelry display" loading="lazy" width="900" height="600"></picture></div>
       </div>
