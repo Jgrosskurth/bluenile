@@ -633,26 +633,22 @@ main .section.full-bleed > div {
 }
 
 /* CATEGORY CAROUSEL */
-/* Live site: 8 portrait tiles filling the full viewport width.
-   Each tile: portrait aspect (462×554 image + label area below).
-   Desktop: flex row, no gaps, each tile 1/8 width.
-   Mobile: horizontal scroll. */
-
 .category-carousel {
   background: #fff;
-  padding: 0;
+  padding: 32px 0;
   width: 100%;
   overflow: hidden;
-  position: relative;
 }
 
+/* Mobile: horizontal scroll row */
 .category-carousel .carousel-track {
   display: flex;
   flex-direction: row;
-  gap: 0;
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  padding: 0 16px;
   scrollbar-width: none;
 }
 
@@ -660,34 +656,54 @@ main .section.full-bleed > div {
   display: none;
 }
 
-/* Tile: show 2 at a time like live site focus carousel (each ~50% width) */
-.category-carousel .carousel-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  text-decoration: none;
-  color: inherit;
-  flex: 0 0 50%;
-  scroll-snap-align: start;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-@media (max-width: 767px) {
-  .category-carousel .carousel-tile {
-    flex: 0 0 85%;
+/* Desktop: 8-column grid */
+@media (min-width: 768px) {
+  .category-carousel .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
+    gap: 16px;
+    overflow-x: visible;
+    padding: 0 24px;
+    scroll-snap-type: none;
   }
 }
 
-.category-carousel .carousel-tile:hover .tile-image {
+/* Tile */
+.category-carousel .carousel-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  flex: 0 0 auto;
+  width: 160px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .category-carousel .carousel-tile {
+    width: 100%;
+  }
+}
+
+.category-carousel .carousel-tile:hover .tile-image,
+.category-carousel .carousel-tile:focus .tile-image {
   transform: scale(1.04);
 }
 
-/* Image wrapper — portrait aspect 496:595 matching live (496×595px images) */
+.category-carousel .carousel-tile:focus {
+  outline: 2px solid #0c1636;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Image wrapper — 1:1 crop */
 .category-carousel .tile-image-wrap {
   width: 100%;
-  aspect-ratio: 496 / 595;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  border-radius: 4px;
   background: #f5f5f5;
 }
 
@@ -696,23 +712,21 @@ main .section.full-bleed > div {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.35s ease;
+  transition: transform 0.25s ease;
 }
 
-/* Label — below image, matching live site: 14px Outfit, navy */
+/* Label */
 .category-carousel .tile-label {
   display: block;
-  padding: 16px 16px 16px 0;
-  font-family: 'Outfit', sans-serif;
+  margin-top: 10px;
+  font-family: 'Gantari', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  color: rgb(21, 21, 66);
-  text-transform: none;
-  letter-spacing: normal;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-weight: 500;
+  color: #0c1636;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  line-height: 1.3;
 }
 
 /* PROMO BANNER */
