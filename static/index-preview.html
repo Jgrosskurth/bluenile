@@ -8,11 +8,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://dam.bluenile.com" crossorigin>
   <link rel="preconnect" href="https://ecommo--ion.bluenile.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Non-blocking Google Fonts load -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <style>
 /* FONTS */
-/* Blue Nile Brand Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap');
+/* Blue Nile Brand Fonts — loaded via preload link in <head>, not @import */
 
 @font-face {
   font-family: gantari-fallback;
@@ -1859,7 +1860,7 @@ body { margin: 0; padding: 0; }
         </div>
         <div>
           <picture>
-            <img src="https://dam.bluenile.com/images/public/53509/GOLD-BRACELET-WITH-SEAL-ON-BLUE-PAPER.webp" alt="Gold bracelet with Blue Nile seal on blue paper" loading="eager" width="960" height="640">
+            <img src="https://dam.bluenile.com/images/public/53509/GOLD-BRACELET-WITH-SEAL-ON-BLUE-PAPER.webp" alt="Gold bracelet with Blue Nile seal on blue paper" loading="eager" fetchpriority="high" width="960" height="640">
           </picture>
         </div>
       </div>
@@ -1962,6 +1963,7 @@ function decorateNavBar(block) {
           src="https://ecommo--ion.bluenile.com/bn-main/logo.6b793.svg"
           alt="Blue Nile"
           loading="eager"
+          width="156"
           height="28"
         >
       </a>
@@ -2374,8 +2376,7 @@ function decorateDiamondShapes(block) {
       <img
         src="https://dam.bluenile.com/images/public/50205/diamond-cuts-collection.webp"
         alt="Diamond cuts collection"
-        loading="lazy"
-      >
+        loading="lazy" width="960" height="1177">
     </div>
     <div class="diamond-shapes-grid-panel">
       <h3 class="diamond-shapes-title">EXPLORE DIAMOND SHAPES</h3>
@@ -2386,6 +2387,8 @@ function decorateDiamondShapes(block) {
               src="${s.img}"
               alt="${s.label} cut diamond"
               loading="lazy"
+              width="303"
+              height="336"
             >
             <span class="diamond-shape-label">${s.label}</span>
           </a>
@@ -2447,6 +2450,8 @@ function buildCard({ title, img, href }) {
   image.alt = title;
   image.loading = 'lazy';
   image.decoding = 'async';
+  image.width = 858;
+  image.height = 980;
 
   const overlay = document.createElement('div');
   overlay.className = 'collection-card-overlay';
@@ -2548,7 +2553,7 @@ function decorateSplitTwoUp(block) {
 
   block.innerHTML = panels.map(p => `
     <div class="split-panel">
-      <img src="${p.img}" alt="${p.alt}" loading="lazy">
+      <img src="${p.img}" alt="${p.alt}" loading="lazy" width="1530" height="1748">
       <a href="${p.cta.href}" class="split-panel-cta">${p.cta.text}</a>
     </div>
   `).join('');
@@ -2588,7 +2593,7 @@ function decorateValueProps(block) {
     <div class="value-props-grid">
       ${items.map((item) => `
         <div class="value-prop-card">
-          <img src="${item.img}" alt="${item.alt}" class="value-prop-image" loading="lazy">
+          <img src="${item.img}" alt="${item.alt}" class="value-prop-image" loading="lazy" width="462" height="554">
           <h3 class="value-prop-title">${item.title}</h3>
           <p class="value-prop-description">${item.desc}</p>
         </div>
@@ -2685,6 +2690,7 @@ function decorateFooter(block) {
           src="https://ecommo--ion.bluenile.com/bn-main/logo.6b793.svg"
           alt="Blue Nile"
           loading="lazy"
+          width="111"
           height="20"
         >
       </div>
